@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # Data stuff
-Data
+data
 *.xlsx
 *.pdf
 
