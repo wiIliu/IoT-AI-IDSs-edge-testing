@@ -56,7 +56,7 @@ You have **1** main Python files:
 1. **Install** [Anaconda/Miniconda](https://docs.conda.io/en/latest/) if you haven’t already.  
 2. **Create** a new environment (example name: `edgeai`):  
    ```bash
-   conda create -n iot_ids python=3.12.3
+   conda create -n iot_ids python=3.13.7
    ```
 3. **Activate** it:  
    ```bash
