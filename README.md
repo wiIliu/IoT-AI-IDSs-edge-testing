@@ -4,7 +4,7 @@ A practical comparision demonstrating:
 
 - **RT-IoT-2022** usage for **binary, malicious or benign, network traffic classification**  
 - **ML models** (ensemble-based) for training and comparison
-- **DL model** (RNN-based) for training and comparison
+- **DL model** (CNN-based) for training and comparison
 - **Inference and Testing**
 
 **Separate dataset download required** - https://doi.org/10.24432/C5P338 
