@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSI4999 • Intrusion Detection in IoT using AI</title>
+  <link rel="stylesheet" href="static/styles.css" />
+  <style>
+    /* Small homepage polish without changing your global CSS */
+    .hero-intro{padding:2rem 0 1rem}
+    .two-col{display:grid;grid-template-columns:1.2fr 0.8fr;gap:1rem}
+    @media(max-width:900px){.two-col{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+    .members li{margin: .25rem 0}
+    .top-nav a{font-weight:600}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">CSI4999 • Intrusion Detection in IoT using AI</h1>
+      <nav class="nav top-nav">
+        <a href="methodology.html">Methodology</a>
+        <a href="results.html">Results</a>
+        <a href="future-work.html">Future Work</a>
+        <a href="challenges.html">Challenges</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- CLEAN HOMEPAGE: Only overview + members -->
+    <section class="hero-intro two-col" id="home">
+      <div>
+        <h2>Project Overview</h2>
+        <p>
+          Our project focused on building artificial intelligence models to classify Internet of Things (IoT) 
+          network data as either benign or malicious. We implemented and compared two approaches: 
+          traditional machine learning (ML) methods using models such as XGBoost and decision trees, 
+          and a deep learning (DL) method using an RNN-LSTM model that captures sequential dependencies. 
+          By evaluating both approaches, we identified which model performed better as an intrusion detection system (IDS) 
+          in terms of accuracy, precision, recall, and overall robustness.
+        </p>
+        <ul class="card">
+          <h2>Overview</h2>
+          <li>Binary classification: benign vs. malicious traffic</li>
+          <li>Metrics: Accuracy, Precision, Recall, F1, ROC‑AUC</li>
+          <li>Deliverables: trained models, evaluation, and a demo-ready site</li>
+        </ul>
+        <!-- <p class="muted">Use the navigation above to visit each detailed page.</p> -->
+      </div>
+      <aside class="card">
+        <h3>Group Members</h3>
+        <ul class="members">
+          <p><li><strong>Chelsea Pfeiffer</strong> — Project Manager & Website</li>
+          <li><strong>Josh Quintantino</strong> — Machine Learning</li>
+          <li><strong>Austin Tomo</strong> — Machine Learning</li>
+          <li><strong>Willow Connelly</strong> — Deep Learning</li>
+          <li><strong>Emma Gabbos</strong> — Deep Learning</li>
+          <br> <strong>Our team has done a fantastic job working together, communicating, and getting the job done.</strong>
+          </p>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- DETAILED SECTIONS (reachable via top nav) -->
+    
+
+    
+
+    
+
+    
+
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CSI4999 • Oakland University • IDS in IoT using AI</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lightweight loader for /results.json; flexible schema shown below
+    async function loadResults(){
+      try{
+        const res = await fetch('results.json', {cache: 'no-store'});
+        if(!res.ok) throw new Error('results.json not found');
+        const data = await res.json();
+        renderResults(data);
+      }catch(err){
+        document.getElementById('results-table').innerHTML = '<p class="muted">No results.json found yet. Add one to populate this section.</p>';
+      }
+    }
+
+    function renderResults(data){
+      const tbl = document.getElementById('results-table');
+      const metrics = data.metrics || [];
+      if(!metrics.length){
+        tbl.innerHTML = '<p class="muted">results.json loaded, but has no metrics.</p>';
+        return;
+      }
+      const cols = ['model','accuracy','precision','recall','f1','roc_auc'];
+      const thead = `<thead><tr>${cols.map(c=>`<th>${c.replace('_',' ').toUpperCase()}</th>`).join('')}</tr></thead>`;
+      const rows = metrics.map(m=>`<tr>${cols.map(c=>`<td>${m[c] ?? ''}</td>`).join('')}</tr>`).join('');
+      tbl.innerHTML = `<table class="kv">${thead}<tbody>${rows}</tbody></table>`;
+
+      const kt = document.getElementById('key-takeaways');
+      kt.innerHTML = (data.takeaways||[]).map(t=>`<li>${t}</li>`).join('');
+    }
+
+    // Load on first paint
+    loadResults();
+  </script>
+</body>
+</html>
