@@ -85,10 +85,10 @@ pip install -r requirements.txt
 
 **Typical Requirements** (already in `dependencies.txt`):
 - Python 3.12 (or similar)
-- PyTorch
-- Pandas
-- Matplotlib (for plotting)
-- scikit-learn (for classification reports)
+- PyTorch 2.8
+- Pandas 2.3.3
+- Matplotlib 3.10 (for plotting)
+- scikit-learn 1.7.2 (for classification reports)
 
 ---
 
