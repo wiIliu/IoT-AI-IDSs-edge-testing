@@ -60,7 +60,8 @@ You have **1** main Python files:
 | ├──── static/
 | | ├── app.js
 | | ├── style.css
-├── dataPreprocessing.ipynb   # Loads and splits RT-IoT2022; Visualizes data structure
+├── dataPreprocessing.py   # Script to load and split RT-IoT2022
+├── dataAnalysisVisualization.ipynb   # Notebook to analyze and visualize dataset
 ├── ml_trainingValidation.ipynb   # Builds, tunes, trains, validates, and exports ML models for binary classification
 ├── ml_multi_trainingValidation.ipynb    # Builds, tunes, trains, validates, and exports ML models for multi-class classification
 ├── cnn_base.ipynb    # Builds, tunes, trains, validates, and exports base CNN for binary classification
