@@ -49,6 +49,7 @@ You have **1** main Python files:
 
 ```
 .
+├──── models/ # holds all .pth model exports
 ├──── webdemo/ # code for website demo and info
 | ├── index.html
 | ├── methodology.html
@@ -59,7 +60,6 @@ You have **1** main Python files:
 | ├──── static/
 | | ├── app.js
 | | ├── style.css
-├──── models/ # holds all .pth model exports
 ├── dataPreprocessing.ipynb   # Loads and splits RT-IoT2022; Visualizes data structure
 ├── ml_trainingValidation.ipynb   # Builds, tunes, trains, validates, and exports ML models for binary classification
 ├── ml_multi_trainingValidation.ipynb    # Builds, tunes, trains, validates, and exports ML models for multi-class classification
