@@ -1,8 +1,9 @@
 # CSI4999 IDS in IoT using AI Solutions
+Is there significant difference between ML vs DL-based models when used as an intrusion detection system in IoT environments. <br><br>
 
 A practical comparision demonstrating:
 
-- **RT-IoT-2022** usage for **binary, malicious or benign, network traffic classification**  
+- **RT-IoT-2022** usage for **binary (malicious or benign) and multi-class network traffic classification**  
 - **ML models** (ensemble-based) for training and comparison
 - **DL model** (CNN-based) for training and comparison
 - **Inference and Testing**
@@ -32,7 +33,10 @@ A practical comparision demonstrating:
 
 ## Overview
 
-This repository, **CSI4999_IDSwithAI**, demonstrates ML and DL internet network classification on **RT-IoT2022**. After training, the project saves a checkpoint (`{model}.pth`) that you can copy for usage in desired ways to perform inference.
+This repository, **CSI4999_IDSwithAI**, demonstrates ML and DL internet network classification on **RT-IoT2022**. After training, the project saves a checkpoint (`{model}.pth`) that you can copy for usage in desired ways to perform inference.<br>
+This project focuses on building AI models to classify Internet of things (IoT) network data in two ways: as either benign or malicious, and multi-class. We  implement and compare two approaches: traditional machine learning (ML) methods using models, such as XGBoost and decision trees, and a deep learning (DL) method using a CNN model that is able to identify complex, non-linear relationships. <br>
+By evaluating both approaches, we aim to identify which model performs better as an intrusion detection system (IDS)  in terms of accuracy, precision, recall, and overall robustness.<br>
+In addition to the modeling work, we will develop a project website to clearly present our goals, methodology, results, challenges, and potential future work. This website will serve as a professional showcase of our project outcomes and will make our research accessible to both technical and non-technical audiences.
 
 ---
 
@@ -45,7 +49,22 @@ You have **1** main Python files:
 
 ```
 .
-├── dataPreprocessing.py   # Loads and splits RT-IoT2022; Visualizes data structure
+├──── models/ # holds all .pth model exports
+├──── webdemo/ # code for website demo and info
+| ├── index.html
+| ├── methodology.html
+| ├── challenges.html
+| ├── results.html
+| ├── future-work.html
+| ├── server.js
+| ├──── static/
+| | ├── app.js
+| | ├── style.css
+├── dataPreprocessing.ipynb   # Loads and splits RT-IoT2022; Visualizes data structure
+├── ml_trainingValidation.ipynb   # Builds, tunes, trains, validates, and exports ML models for binary classification
+├── ml_multi_trainingValidation.ipynb    # Builds, tunes, trains, validates, and exports ML models for multi-class classification
+├── cnn_base.ipynb    # Builds, tunes, trains, validates, and exports base CNN for binary classification
+├── cnn_multi.ipynb    # Builds, tunes, trains, validates, and exports standard CNN model for multi-class classification
 └── requirments.txt/environment.yml          # Dependencies/Environment needed for this project
 ```
 
@@ -89,6 +108,7 @@ pip install -r requirements.txt
 - Pandas 2.3.3
 - Matplotlib 3.10 (for plotting)
 - scikit-learn 1.7.2 (for classification reports)
+- imbalanced-learn 0.14.0 (for SMOTE class balancing)
 
 ---
 
