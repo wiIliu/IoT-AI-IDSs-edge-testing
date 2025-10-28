@@ -33,10 +33,10 @@ A practical comparision demonstrating:
 
 ## Overview
 
-&nbsp;&nbsp;&nbsp;&nbspThis repository, **CSI4999_IDSwithAI**, demonstrates ML and DL internet network classification on **RT-IoT2022**. After training, the project saves a checkpoint (`{model}.pth`) that you can copy for usage in desired ways to perform inference.<br>
-&nbsp;&nbsp;&nbsp;&nbspThis project focuses on building AI models to classify Internet of things (IoT) network data in two ways: as either benign or malicious, and multi-class. We  implement and compare two approaches: traditional machine learning (ML) methods using models, such as XGBoost and decision trees, and a deep learning (DL) method using a CNN model that is able to identify complex, non-linear relationships. <br>
-&nbsp;&nbsp;&nbsp;&nbspBy evaluating both approaches, we aim to identify which model performs better as an intrusion detection system (IDS)  in terms of accuracy, precision, recall, and overall robustness.<br>
-&nbsp;&nbsp;&nbsp;&nbspIn addition to the modeling work, we will develop a project website to clearly present our goals, methodology, results, challenges, and potential future work. This website will serve as a professional showcase of our project outcomes and will make our research accessible to both technical and non-technical audiences.
+&nbsp;&nbsp;&nbsp;&nbsp;This repository, **CSI4999_IDSwithAI**, demonstrates ML and DL internet network classification on **RT-IoT2022**. After training, the project saves a checkpoint (`{model}.pth`) that you can copy for usage in desired ways to perform inference.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This project focuses on building AI models to classify Internet of things (IoT) network data in two ways: as either benign or malicious, and multi-class. We  implement and compare two approaches: traditional machine learning (ML) methods using models, such as XGBoost and decision trees, and a deep learning (DL) method using a CNN model that is able to identify complex, non-linear relationships. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;By evaluating both approaches, we aim to identify which model performs better as an intrusion detection system (IDS)  in terms of accuracy, precision, recall, and overall robustness.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;In addition to the modeling work, we will develop a project website to clearly present our goals, methodology, results, challenges, and potential future work. This website will serve as a professional showcase of our project outcomes and will make our research accessible to both technical and non-technical audiences.
 
 ---
 
