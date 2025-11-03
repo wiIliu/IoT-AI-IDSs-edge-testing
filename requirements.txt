@@ -158,4 +158,5 @@ wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_175862227960
 webcolors==24.8.0
 wheel==0.45.1
 xgboost @ file:///home/conda/feedstock_root/build_artifacts/xgboost-split_1758007742820/work/python-package
+catboost
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1749421620841/work
