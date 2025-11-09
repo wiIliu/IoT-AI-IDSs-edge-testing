@@ -1,7 +1,9 @@
 import torch
 
-from CNNmultimodel_classFile import MultiClassAttackCNN
+from pytorch_nndct.apis import torch_quantizer
 from testLoader import test_loader, class_names
+from CNNmultimodel_classFile import MultiClassAttackCNN
+
 
 
 def load_model(model_path, device):
@@ -28,8 +30,6 @@ xtestpts_0 =xtestpts_0.unsqueeze(1)
 with torch.no_grad():
     output = cnn(xtestpts_0)
 
-# from torchvision.datasets import Caltech101
-# lbls = Caltech101(root=r"C:\Users\willo_jlqcl0r\Downloads\caltech-101",download=False).categories
 lbls = class_names
 print(type(lbls), lbls)
 
@@ -65,7 +65,6 @@ print("Converting to batch...")
 calib_batch = torch.stack(calib_pts[0:9])
 print("calib batch - ",calib_batch.shape)
 
-from pytorch_nndct.apis import torch_quantizer, dump_xmodel
 
 print("Quantizing...")
 quantizer = torch_quantizer("calib", cnn, (calib_batch))
@@ -106,7 +105,6 @@ test_batch = torch.stack(test)
 
 
 # create quantizer with "test" (i.e. evaluation and export) setting
-# input = torch.randn([1, 3, 224, 224])
 quantizer = torch_quantizer("test", cnn, (test_batch))
 
 
