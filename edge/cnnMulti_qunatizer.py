@@ -2,7 +2,7 @@ import torch
 
 from pytorch_nndct.apis import torch_quantizer
 from testLoader import test_loader, class_names
-from CNNmultimodel_classFile import MultiClassAttackCNN
+from edge.CNNmulti_classFile import MultiClassAttackCNN
 
 
 
