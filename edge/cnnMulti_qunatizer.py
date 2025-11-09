@@ -2,9 +2,9 @@ import torch
 
 from pytorch_nndct.apis import torch_quantizer
 from testLoader import test_loader, class_names
-from edge.CNNmulti_classFile import MultiClassAttackCNN
+from CNNmulti_classFile import MultiClassAttackCNN
 
-
+print("start")
 
 def load_model(model_path, device):
     model = MultiClassAttackCNN(num_classes=12)
@@ -15,9 +15,11 @@ def load_model(model_path, device):
     print("Model loaded successfully.")
     return model
 
-cnn=load_model(r"2dcnn_multiclass.pth",'cpu')
+cnn=load_model(r"models/2dcnn_multiclass.pth",'cpu')
 
-print("uuuuu")
+
+
+print("modelLoaded")
 input("pause...")
 
 
@@ -39,10 +41,8 @@ top5_prob, top5_catid = torch.topk(probabilities, 5)
 
 # print top 5
 for i in range(top5_prob.size(0)):
-   print(f'{i} {top5_prob[i].item() * 100:.2f}%')
+   print(f'{top5_catid[i]} - {lbls[top5_catid[i]]} = {top5_prob[i].item() * 100:.2f}%')
 
-print("ytestpts\n")
-print(ytestpts)
 
 # pause here
 input("Press Enter to continue...")
@@ -55,9 +55,7 @@ calib_pts = []
 print(len(xtestpts))
 
 
-# go through each subfolder 0 thru 999
-
-
+# go through each pt 0 thru 9
 for i in range(10):
    calib_pts.append(xtestpts[i+1])
 
@@ -87,17 +85,13 @@ top5_prob, top5_catid = torch.topk(probabilities, 5)
 
 # print top 5
 for i in range(top5_prob.size(0)):
-   print(f'{i} {top5_prob[i].item() * 100:.2f}%')
+   print(f'{top5_catid[i]} - {lbls[top5_catid[i]]} = {top5_prob[i].item() * 100:.2f}%')
 
 print("Exporting...")
-
-
 quantizer.export_quant_config()
 
 
 print("Deploying...")
-
-
 # create batch with 1 test image
 test = []
 test.append(xtestpts[0])
@@ -124,7 +118,7 @@ top5_prob, top5_catid = torch.topk(probabilities, 5)
 
 # print top 5
 for i in range(top5_prob.size(0)):
-   print(f'{i} {top5_prob[i].item() * 100:.2f}%')
+   print(f'{top5_catid[i]} - {lbls[top5_catid[i]]} = {top5_prob[i].item() * 100:.2f}%')
 
 
 quantizer.export_xmodel(deploy_check=True)

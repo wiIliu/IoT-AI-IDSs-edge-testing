@@ -1,8 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-# from testLoader import test_loader
-
 class MultiClassAttackCNN(nn.Module):
     def __init__(self, num_classes=12):
         super(MultiClassAttackCNN, self).__init__()
