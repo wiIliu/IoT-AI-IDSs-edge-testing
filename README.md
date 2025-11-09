@@ -66,6 +66,11 @@ You have **1** main Python files:
 ├── ml_multi_trainingValidation.ipynb    # Builds, tunes, trains, validates, and exports ML models for multi-class classification
 ├── cnn_base.ipynb    # Builds, tunes, trains, validates, and exports base CNN for binary classification
 ├── cnn_multi.ipynb    # Builds, tunes, trains, validates, and exports standard CNN model for multi-class classification
+├──── edge/   # files for edge work
+| ├── test_loader.py    # creates dataloader for test data used for eval and calibration in quantizer file
+| ├── cnnMulti_classFile.py   # creates usable class of the CNN multiclassification model
+| ├── cnnMulti_quantizer   # quantizes trained 2dcnnMulti.pth model into a fixed-point xmodel
+| ├── MultiClassAttackCNN_int.xmodel   # quantized model for use on the edge device
 └── requirments.txt/environment.yml          # Dependencies/Environment needed for this project
 ```
 
