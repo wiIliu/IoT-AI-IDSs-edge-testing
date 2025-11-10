@@ -1,59 +1,136 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Results • CSI4999 IDS in IoT</title>
-  <link rel="stylesheet" href="static/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">CSI4999 • Results & Comparison</h1>
-      <nav class="nav top-nav">
-        <a href="index.html">Home</a>
-        <a href="methodology.html">Methodology</a>
-        <a href="future-work.html">Future Work</a>
-        <a href="challenges.html">Challenges</a>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-    <section class="hero">
-      <p class="muted">This page auto‑loads metrics from <code>results.json</code> located next to this file.</p>
-      <div id="results-table" class="card"></div>
-      <div class="card">
-        <h3>Key Takeaways</h3>
-        <ul id="key-takeaways"></ul>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Results • CSI4999</title>
+    <link rel="stylesheet" href="static/styles.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
+      <div>
+        <a href="./index.html">Overview</a>
+        <a class="active" href="./results.html">Results</a>
+        <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">Repo</a>
       </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <div class="container"><p>CSI4999 • Oakland University</p></div>
-  </footer>
-  <script>
-    async function loadResults(){
-      try{
-        const res = await fetch('results.json', {cache:'no-store'});
-        if(!res.ok) throw new Error('No results.json');
-        const data = await res.json();
-        renderResults(data);
-      }catch(e){
-        document.getElementById('results-table').innerHTML = '<p class="muted">results.json is missing. Add it to this folder to populate metrics.</p>';
-      }
-    }
-    function renderResults(data){
-      const tbl = document.getElementById('results-table');
-      const metrics = data.metrics||[];
-      const cols = ['model','accuracy','precision','recall','f1','roc_auc'];
-      if(!metrics.length){ tbl.innerHTML = '<p class="muted">No metrics found in results.json</p>'; return; }
-      const thead = `<thead><tr>${cols.map(c=>`<th>${c.replace('_',' ').toUpperCase()}</th>`).join('')}</tr></thead>`;
-      const rows = metrics.map(m=>`<tr>${cols.map(c=>`<td>${m[c] ?? ''}</td>`).join('')}</tr>`).join('');
-      tbl.innerHTML = `<table class="kv">${thead}<tbody>${rows}</tbody></table>`;
-      const kt = document.getElementById('key-takeaways');
-      kt.innerHTML = (data.takeaways||[]).map(t=>`<li>${t}</li>`).join('');
-    }
-    loadResults();
-  </script>
-</body>
+    </nav>
+
+
+    <div class="container">
+      <h1>Model Results Dashboard</h1>
+      <p class="small">Dataset: <b id="datasetName">—</b> • Task: <b id="taskType">—</b> • Split: <b id="splitInfo">—</b> • Generated: <b id="timestamp">—</b></p>
+
+
+      <div class="grid">
+        <!-- LEFT MODEL -->
+        <section class="card span-6">
+          <div class="badge" id="left-badge"></div>
+          <h2 id="left-title"></h2>
+
+
+          <div class="grid">
+            <div class="span-6">
+              <table class="table">
+                <caption>Macro metrics</caption>
+                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Accuracy</td><td id="left-acc">—</td></tr>
+                  <tr><td>Precision</td><td id="left-prec">—</td></tr>
+                  <tr><td>Recall</td><td id="left-rec">—</td></tr>
+                  <tr><td>F1</td><td id="left-f1">—</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="span-6">
+              <div class="small">Confusion Matrix</div>
+              <div class="cm" id="left-cm"></div>
+            </div>
+          </div>
+
+
+          <div style="height:240px; margin-top:12px;">
+            <canvas id="left-roc"></canvas>
+          </div>
+          <div style="height:240px; margin-top:12px;">
+            <canvas id="left-pr"></canvas>
+          </div>
+
+
+          <h3>Per-class</h3>
+          <table class="table">
+            <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr></thead>
+            <tbody id="left-perclass"></tbody>
+          </table>
+          <div class="small" id="left-download"></div>
+        </section>
+
+
+        <!-- RIGHT MODEL -->
+        <section class="card span-6">
+          <div class="badge" id="right-badge"></div>
+          <h2 id="right-title"></h2>
+
+
+          <div class="grid">
+            <div class="span-6">
+              <table class="table">
+                <caption>Macro metrics</caption>
+                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Accuracy</td><td id="right-acc">—</td></tr>
+                  <tr><td>Precision</td><td id="right-prec">—</td></tr>
+                  <tr><td>Recall</td><td id="right-rec">—</td></tr>
+                  <tr><td>F1</td><td id="right-f1">—</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="span-6">
+              <div class="small">Confusion Matrix</div>
+              <div class="cm" id="right-cm"></div>
+            </div>
+          </div>
+
+
+          <div style="height:240px; margin-top:12px;">
+            <canvas id="right-roc"></canvas>
+          </div>
+          <div style="height:240px; margin-top:12px;">
+            <canvas id="right-pr"></canvas>
+          </div>
+
+
+          <h3>Per-class</h3>
+          <table class="table">
+            <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr></thead>
+            <tbody id="right-perclass"></tbody>
+          </table>
+          <div class="small" id="right-download"></div>
+        </section>
+
+
+        <section class="card span-12">
+          <h2>Interpretation Tips</h2>
+          <ul class="small">
+            <li><b>Macro</b> metrics average classes equally; helpful under class imbalance.</li>
+            <li><b>ROC</b> curves compare TPR vs FPR; higher AUC indicates better separability.</li>
+            <li><b>PR</b> curves are often more informative with heavy class imbalance.</li>
+            <li>The confusion matrix highlights common confusions to guide error analysis.</li>
+          </ul>
+        </section>
+      </div>
+
+
+      <footer>© CSI4999 • Oakland University — Results</footer>
+    </div>
+
+
+    <script src="./static/app.js"></script>
+  </body>
 </html>
+
+
