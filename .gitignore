@@ -5,6 +5,7 @@ __pycache__/
 
 # Data stuff
 data
+images
 *.xlsx
 *.pdf
 
