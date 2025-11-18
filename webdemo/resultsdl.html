@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Results for DL Model | IDS in IoT using AI Solutions</title>
+    <title>Results for Deep Learning Models | IDS in IoT using AI Solutions</title>
     <link rel="stylesheet" href="static/styles.css">
 
     <!-- Chart.js CDN -->
@@ -13,13 +13,15 @@
     <nav class="nav">
       <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
       <div>
-        <a href="./index.html">Overview</a>
-        <a class="active" href="./resultsdl.html">Results</a>
+        <a class="active" href="./index.html">Overview</a>
         <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">Repo</a>
-        <a href="future-work.html" target="_blank" rel="noopener">Future Work</a>
-        <a href="methodology.html" target="_blank" rel="noopener">Methodology</a>
-        <a href="challenges.html" target="_blank" rel="noopener">Challenges</a>
+        <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+        <a href="./resultscnn.html">Results CNN</a>
+        <a href="./resultsml.html">Results ML</a>
+        <a href="./resultsdl.html">Results DL</a>
+        <!--<a href="./future-work.html">Future Work</a>-->
+        <!--<a href="./methodology.html">Methodology</a>-->
+        <!--<a href="./challenges.html">Challenges</a>-->
       </div>
     </nav>
 
@@ -31,12 +33,18 @@
           <h2 id="left-title"></h2> 
         
            <section class="results-summary">
-      <h2>Performance Summary</h2>
-      <p>
-        Our convolutional neural network (CNN) was trained and evaluated on the RT-IoT-2022 dataset.
-        Below is a brief summary of key performance metrics. Detailed numeric results can be
-        presented in a table or bullet list here.
-      </p>
+      <h1>Results for Deep Learning Models</h1>
+
+<p>
+The deep learning models implemented in this project were trained, validated, and evaluated using the RT-IoT-2022 dataset. These models were designed to perform both binary intrusion detection
+(benign vs. malicious traffic) and multiclass classification across multiple attack types. The evaluation below highlights the performance of the deployed convolutional neural network (CNN) architectures.
+</p>
+
+<p>
+Multiple deep learning configurations were tested, including standard 1D and 2D CNN architectures as well as enhanced versions incorporating attention mechanisms to improve feature learning and classification 
+accuracy. Key evaluation metrics such as accuracy, precision, recall, and F1-score were computed to assess detection performance in both binary and multiclass scenarios.
+</p>
+
       <ul>
         <li>Accuracy: <strong>XX.XX%</strong></li>
         <li>Precision: <strong>XX.XX%</strong></li>
@@ -45,28 +53,13 @@
       </ul>
     </section>
 
-    <!-- 🖼 Image section for CNN results -->
-    <section id="cnn-image-results" class="results-images">
-      <h2>Result Visualizations</h2>
-      <p>
-        The following figures show visualizations of the CNN model’s performance, including the
-        confusion matrix and additional evaluation plots.
-      </p>
-
-      <div class="image-grid">
-        <figure>
-          <!-- Replace with your actual file path/name -->
-          <img src="images/cnn_confusion_matrix.png"
-               alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
-          <figcaption>Figure 1. Confusion matrix for the CNN model.</figcaption>
-        </figure>
-
-        <figure>
-          <!-- Optional: ROC/PR curve or other visualization -->
-          <img src="images/cnn_roc_curve.png"
-               alt="ROC curve for the CNN model" />
-          <figcaption>Figure 2. ROC curve for the CNN model.</figcaption>
-        </figure>
+    <!-- 🖼 Image section for DL results -->
+    <section id="dl-image-results" class="results-images">
+  <h2>Result Visualizations</h2>
+  <p>
+    The figures below include confusion matrices, ROC curves, precision-recall visualizations, and performance distribution charts used to evaluate the CNN-based deep learning models.
+  </p>
+</section>
 
         <!-- Add or remove figures as needed -->
       </div>
