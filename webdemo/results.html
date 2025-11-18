@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Results • CSI4999</title>
+    <title>Results for CNN Model | IDS in IoT using AI Solutions</title>
     <link rel="stylesheet" href="static/styles.css">
 
     <!-- Chart.js CDN -->
@@ -24,108 +24,54 @@
     </nav>
 
 
- <div class="container">
-      <h1>Model Results Dashboard</h1>
-      <p class="small">Dataset: <b id="datasetName">—</b> • Task: <b id="taskType">—</b> • Split: <b id="splitInfo">—</b> • Generated: <b id="timestamp">—</b></p>
-
-
      <div class="grid">
         <!-- LEFT MODEL -->
         <section class="card span-6">
           <div class="badge" id="left-badge"></div>
           <h2 id="left-title"></h2> 
         
+           <section class="results-summary">
+      <h2>Performance Summary</h2>
+      <p>
+        Our convolutional neural network (CNN) was trained and evaluated on the RT-IoT-2022 dataset.
+        Below is a brief summary of key performance metrics. Detailed numeric results can be
+        presented in a table or bullet list here.
+      </p>
+      <ul>
+        <li>Accuracy: <strong>XX.XX%</strong></li>
+        <li>Precision: <strong>XX.XX%</strong></li>
+        <li>Recall: <strong>XX.XX%</strong></li>
+        <li>F1-Score: <strong>XX.XX%</strong></li>
+      </ul>
+    </section>
 
-          <div class="grid">
-            <div class="span-6">
-              <table class="table">
-                <caption>Macro metrics</caption>
-                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-                <tbody>
-                  <tr><td>Accuracy</td><td id="left-acc">—</td></tr>
-                  <tr><td>Precision</td><td id="left-prec">—</td></tr>
-                  <tr><td>Recall</td><td id="left-rec">—</td></tr>
-                  <tr><td>F1</td><td id="left-f1">—</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="span-6">
-              <div class="small">Confusion Matrix</div>
-              <div class="cm" id="left-cm"></div>
-            </div>
-          </div>
+    <!-- 🖼 Image section for CNN results -->
+    <section id="cnn-image-results" class="results-images">
+      <h2>Result Visualizations</h2>
+      <p>
+        The following figures show visualizations of the CNN model’s performance, including the
+        confusion matrix and additional evaluation plots.
+      </p>
 
+      <div class="image-grid">
+        <figure>
+          <!-- Replace with your actual file path/name -->
+          <img src="images/cnn_confusion_matrix.png"
+               alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
+          <figcaption>Figure 1. Confusion matrix for the CNN model.</figcaption>
+        </figure>
 
-          <div style="height:240px; margin-top:12px;">
-            <canvas id="left-roc"></canvas>
-          </div>
-          <div style="height:240px; margin-top:12px;">
-            <canvas id="left-pr"></canvas>
-          </div>
+        <figure>
+          <!-- Optional: ROC/PR curve or other visualization -->
+          <img src="images/cnn_roc_curve.png"
+               alt="ROC curve for the CNN model" />
+          <figcaption>Figure 2. ROC curve for the CNN model.</figcaption>
+        </figure>
 
-
-          <h3>Per-class</h3>
-          <table class="table">
-            <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr></thead>
-            <tbody id="left-perclass"></tbody>
-          </table>
-          <div class="small" id="left-download"></div>
-        </section>
-
-
-        <!-- RIGHT MODEL -->
-        <section class="card span-6">
-          <div class="badge" id="right-badge"></div>
-          <h2 id="right-title"></h2>
-
-
-          <div class="grid">
-            <div class="span-6">
-              <table class="table">
-                <caption>Macro metrics</caption>
-                <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-                <tbody>
-                  <tr><td>Accuracy</td><td id="right-acc">—</td></tr>
-                  <tr><td>Precision</td><td id="right-prec">—</td></tr>
-                  <tr><td>Recall</td><td id="right-rec">—</td></tr>
-                  <tr><td>F1</td><td id="right-f1">—</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="span-6">
-              <div class="small">Confusion Matrix</div>
-              <div class="cm" id="right-cm"></div>
-            </div>
-          </div>
-
-
-          <div style="height:240px; margin-top:12px;">
-            <canvas id="right-roc"></canvas>
-          </div>
-          <div style="height:240px; margin-top:12px;">
-            <canvas id="right-pr"></canvas>
-          </div>
-
-
-          <h3>Per-class</h3>
-          <table class="table">
-            <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr></thead>
-            <tbody id="right-perclass"></tbody>
-          </table>
-          <div class="small" id="right-download"></div>
-        </section>
-
-
-        <section class="card span-12">
-          <h2>Interpretation Tips</h2>
-          <ul class="small">
-            <li><b>Macro</b> metrics average classes equally; helpful under class imbalance.</li>
-            <li><b>ROC</b> curves compare TPR vs FPR; higher AUC indicates better separability.</li>
-            <li><b>PR</b> curves are often more informative with heavy class imbalance.</li>
-            <li>The confusion matrix highlights common confusions to guide error analysis.</li>
-          </ul>
-        </section>
+        <!-- Add or remove figures as needed -->
       </div>
+    </section>
+  </main>
     
 
       <footer>© CSI4999 • Oakland University — Results</footer>
