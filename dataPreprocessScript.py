@@ -27,7 +27,7 @@ train["fwd_payload_zero_flg"] = (train["fwd_pkts_payload.tot"] == 0).astype(int)
 
  
 # redundant features or useless
-train = train.drop(['proto_tcp','bwd_pkts_per_sec','fwd_header_size_tot','bwd_pkts_payload.tot',
+train = train.drop(['proto_udp','fwd_header_size_tot','bwd_pkts_payload.tot',
                     'bwd_header_size_tot','fwd_pkts_payload.tot',"Unnamed: 0",'bwd_URG_flag_count'
                     ],axis=1)
 
@@ -46,7 +46,7 @@ X_test['b_Header_f_payload_Ratio'] = X_test['bwd_header_size_tot'] / X_test['fwd
 # train['b_Header_f_payload_Ratio'].replace(np.nan, train['b_Header_f_payload_Ratio'].max() + 1) FOR CNN
 X_test["bwd_payload_zero_flg"] = (X_test["bwd_pkts_payload.tot"] == 0).astype(int)
 X_test["fwd_payload_zero_flg"] = (X_test["fwd_pkts_payload.tot"] == 0).astype(int)
-X_test = X_test.drop(['proto_tcp','bwd_pkts_per_sec','fwd_header_size_tot','bwd_pkts_payload.tot',
+X_test = X_test.drop(['proto_udp','fwd_header_size_tot','bwd_pkts_payload.tot',
                     'bwd_header_size_tot','fwd_pkts_payload.tot',"Unnamed: 0",'bwd_URG_flag_count'
                     ],axis=1)
 X_test = pd.DataFrame(scaler.transform(X_test), columns=X_test.columns, index=X_test.index)
