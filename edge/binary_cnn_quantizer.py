@@ -1,13 +1,13 @@
 import torch
 
 from pytorch_nndct.apis import torch_quantizer
-from edge.multitestLoader import test_loader, class_names
-from MultiAttnCNN_classFile import MultiAttnCNN
+from binaryTestLoader import test_loader, class_names
+from BinaryCNN_classFile import BinaryCNN
 
 print("start")
 
 def load_model(model_path, device):
-    model = MultiAttnCNN(num_classes=12)
+    model = BinaryCNN()
     state_dict = torch.load(model_path, map_location=device)
     model.load_state_dict(state_dict)
     model.to(device)
@@ -15,7 +15,7 @@ def load_model(model_path, device):
     print("Model loaded successfully.")
     return model
 
-cnn=load_model(r"models/1dcnn_multiclass_attn.pth",'cpu')
+cnn=load_model(r"1dcnn_binary.pth",'cpu')
 
 print("modelLoaded")
 input("pause...")
@@ -34,15 +34,11 @@ with torch.no_grad():
 
 lbls = class_names
 print(type(lbls), lbls)
-
+print(output)
 # Get the top 5 predicted classes and their confidence scores
-probabilities = torch.nn.functional.softmax(output[0], dim=0)
-top5_prob, top5_catid = torch.topk(probabilities, 5)
-
+probabilities = torch.nn.functional.sigmoid(output[0], dim=0)
+print(probabilities)
 # print top 5
-for i in range(top5_prob.size(0)):
-   print(f'{top5_catid[i]} - {lbls[top5_catid[i]]} = {top5_prob[i].item() * 100:.2f}%')
-
 
 # pause here
 input("Press Enter to continue...")
@@ -77,13 +73,10 @@ output = quant_model(xtestpts_0)
 
 
 # Get the top 5 predicted classes and their confidence scores
-probabilities = torch.nn.functional.softmax(output[0], dim=0)
-top5_prob, top5_catid = torch.topk(probabilities, 5)
-
+probabilities = torch.nn.functional.sigmoid(output[0], dim=0)
+print(probabilities)
 
 # print top 5
-for i in range(top5_prob.size(0)):
-   print(f'{top5_catid[i]} - {lbls[top5_catid[i]]} = {top5_prob[i].item() * 100:.2f}%')
 
 print("Exporting...")
 quantizer.export_quant_config()
@@ -110,14 +103,8 @@ output = quant_model(xtestpts_0)
 
 
 # Get the top 5 predicted classes and their confidence scores
-probabilities = torch.nn.functional.softmax(output[0], dim=0)
-top5_prob, top5_catid = torch.topk(probabilities, 5)
-
-
-# print top 5
-for i in range(top5_prob.size(0)):
-   print(f'{top5_catid[i]} - {lbls[top5_catid[i]]} = {top5_prob[i].item() * 100:.2f}%')
-
+probabilities = torch.nn.functional.sigmoid(output[0], dim=0)
+print(probabilities)
 
 quantizer.export_xmodel(deploy_check=True)
 quantizer.export_onnx_model()
