@@ -2,12 +2,12 @@ import torch
 
 from pytorch_nndct.apis import torch_quantizer
 from testLoader import test_loader, class_names
-from CNNmulti_classFile import MultiClassAttackCNN
+from MultiAttnCNN_classFile import MultiAttnCNN
 
 print("start")
 
 def load_model(model_path, device):
-    model = MultiClassAttackCNN(num_classes=12)
+    model = MultiAttnCNN(num_classes=12)
     state_dict = torch.load(model_path, map_location=device)
     model.load_state_dict(state_dict)
     model.to(device)
@@ -15,9 +15,7 @@ def load_model(model_path, device):
     print("Model loaded successfully.")
     return model
 
-cnn=load_model(r"models/2dcnn_multiclass.pth",'cpu')
-
-
+cnn=load_model(r"models/1dcnn_multiclass_attn.pth",'cpu')
 
 print("modelLoaded")
 input("pause...")
@@ -26,9 +24,11 @@ input("pause...")
 cnn.eval()  # Set the model to evaluation mode
 
 xtestpts, ytestpts = next(iter(test_loader))
-print(xtestpts.shape)
+print(xtestpts.shape, len(xtestpts))
 xtestpts_0 = xtestpts[0]
+print(xtestpts_0.shape)
 xtestpts_0 =xtestpts_0.unsqueeze(1)
+
 with torch.no_grad():
     output = cnn(xtestpts_0)
 
@@ -51,8 +51,6 @@ input("Press Enter to continue...")
 # prepare images for calibration
 print("Prepare for calibration...")
 calib_pts = []
-
-print(len(xtestpts))
 
 
 # go through each pt 0 thru 9
