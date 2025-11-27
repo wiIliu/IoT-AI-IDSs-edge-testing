@@ -20,8 +20,8 @@ y_test = to_binary_label(test["Attack_type"])
 X_test = test.drop("Attack_type", axis=1).values
 
 
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32).view(-1, 1)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32) 
+X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
+y_test_tensor = torch.tensor(y_test, dtype=torch.float32).view(-1, 1) 
 X_test_tensor = X_test_tensor.unsqueeze(1)
 test_dataset = TensorDataset(X_test_tensor, y_test_tensor)
 
