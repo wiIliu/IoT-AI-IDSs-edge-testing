@@ -15,7 +15,7 @@ def load_model(model_path, device):
     print("Model loaded successfully.")
     return model
 
-cnn=load_model(r"1dcnn_binary.pth",'cpu')
+cnn=load_model(r"2dcnn_binary.pth",'cpu')
 
 print("modelLoaded")
 input("pause...")

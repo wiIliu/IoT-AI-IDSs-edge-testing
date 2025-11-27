@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-class MultiClass1dCNN(nn.Module):
+class MultiClass2dCNN(nn.Module):
     def __init__(self, num_features=83, num_classes=12, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=(1,3), padding=(0,1))
