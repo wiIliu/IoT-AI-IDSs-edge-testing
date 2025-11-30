@@ -18,7 +18,6 @@
         <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
         <a href="./resultscnn.html">Results CNN</a>
         <a href="./resultsml.html">Results ML</a>
-        <a href="./resultsdl.html">Results DL</a>
         <!--<a href="./future-work.html">Future Work</a>-->
         <!--<a href="./methodology.html">Methodology</a>-->
         <!--<a href="./challenges.html">Challenges</a>-->
@@ -38,40 +37,60 @@
 
 <p>
 The traditional machine learning models in this project were trained, validated, and evaluated using the RT-IoT-2022 dataset. The goal of these models was to perform both binary intrusion detection 
-(benign vs. malicious traffic) and multiclass attack classification. The results shown below summarize the performance of the two baseline models used for comparison: Random Forest and XGBoost.
+(benign vs. malicious traffic) and multiclass attack classification. 
+The results shown below summarize the performance of the two baseline models used for comparison: Catboost and XGBoost.
 </p>
-
-<p>
-Performance metrics such as accuracy, precision, recall, and F1-score were calculated to assess each model’s effectiveness in identifying network threats and distinguishing between multiple attack categories.
-The tables and visualizations below provide a detailed breakdown of these results for both binary and multiclass configurations.
-</p>
-
-      <ul>
-        <li>Accuracy: <strong>XX.XX%</strong></li>
-        <li>Precision: <strong>XX.XX%</strong></li>
-        <li>Recall: <strong>XX.XX%</strong></li>
-        <li>F1-Score: <strong>XX.XX%</strong></li>
-      </ul>
-    </section>
 
     <!-- 🖼 Image section for CNN results -->
 
-  <section id="ml-image-results" class="results-images">
-  <h2>Result Visualizations</h2>
-  <p>
-    The following figures include confusion matrices, precision-recall visuals, and distribution charts used during evaluation of the ML models.
-  </p>
-</section>
+ <section id="cnn-image-results" class="results-images">
+      <h2>Result Visualizations</h2>
+      <p>
+        
+      </p>
 
+      <div class="image-grid">
+        <figure>
+          
+          <img src="static/images/xgb classification report.png"
+               alt="xgb classification report" />
+          <figcaption>Figure 1. Performance metrics for the XGBoost multi-class intrusion detection model.
+This table summarizes the model’s evaluation using accuracy, macro-averaged precision, recall, and F1-score, 
+alongside Matthews Correlation Coefficient (MCC). Additional ROC-AUC metrics (one-vs-rest and one-vs-one) 
+demonstrate near-perfect separability, indicating strong generalization across multiple attack categories.</figcaption>
 
-        <!-- Add or remove figures as needed -->
+      </figure>
+
+        <figure>
+          <img src="static/images/xgb confusion matrix.png"
+               alt="xgb confusion matrix" />
+          <figcaption>Figure 2. Confusion matrix visualizing the performance of the XGBoost classifier across all traffic classes.
+The majority of predictions lie along the diagonal, showing high classification accuracy across most attack types. Misclassification occurs 
+primarily among low-support or behaviorally similar traffic classes, reflecting dataset imbalance and feature overlap in certain categories.</figcaption>
+        </figure>
+
       </div>
-    </section>
-  </main>
-    <p><em>
-These benchmark results serve as a comparison baseline for measuring the performance improvements achieved by the deep learning models.
-</em></p>
 
+            <div class="image-grid">
+        <figure>
+          <img src="static/images/catboost classification report.png"
+               alt="catboost classification report" />
+          <figcaption>Figure 3. Evaluation metrics for the CatBoost binary intrusion detection model.
+The model demonstrates extremely high precision, recall, F1-score, and MCC, indicating strong overall 
+detection capability for distinguishing malicious from benign network traffic. </figcaption>
+
+        </figure>
+
+        <figure>
+          <img src="static/images/catboosstconfusionmatrix.png"
+               alt="catboosstconfusionmatrix" />
+          <figcaption>Figure 4. Confusion matrix for the CatBoost binary classifier.
+The model exhibits exceptional classification performance, correctly identifying the 
+overwhelming majority of samples with only minimal false positives and false negatives. 
+The high concentration of predictions on the diagonal reflects strong precision and recall for both classes.</figcaption>
+        </figure>
+
+      </div>
 
       <footer>© CSI4999 • Oakland University — Results</footer>
     </div>
