@@ -1,13 +1,13 @@
 import torch
 
 from pytorch_nndct.apis import torch_quantizer
-from testLoader import test_loader, class_names
-from MultiAttnCNN_classFile import MultiAttnCNN
+from edge.multitestLoader import test_loader, class_names
+from MultiCNN_classFile import MultiClass2dCNN
 
 print("start")
 
 def load_model(model_path, device):
-    model = MultiAttnCNN(num_classes=12)
+    model = MultiClass2dCNN(num_classes=12)
     state_dict = torch.load(model_path, map_location=device)
     model.load_state_dict(state_dict)
     model.to(device)
@@ -15,7 +15,7 @@ def load_model(model_path, device):
     print("Model loaded successfully.")
     return model
 
-cnn=load_model(r"models/1dcnn_multiclass_attn.pth",'cpu')
+cnn=load_model(r"2dcnn_multiclass.pth",'cpu')
 
 print("modelLoaded")
 input("pause...")

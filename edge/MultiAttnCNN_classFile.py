@@ -29,4 +29,4 @@ class MultiAttnCNN(nn.Module):
         x = self.fc2(x)
         return x
 
-
+print("done")
