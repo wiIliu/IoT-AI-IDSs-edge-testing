@@ -219,3 +219,12 @@ nav a.active {
 nav a.active::after {
   width: 100%;
 }
+
+.resultsdl-img {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
