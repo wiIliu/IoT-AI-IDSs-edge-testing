@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav class="nav">
-      <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
+      <h1>Intrusion Detection in RT-IoT-2022</h1>
       <div>
         <a class="active" href="./index.html">Overview</a>
         <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
@@ -20,16 +20,17 @@
         <!--<a href="./future-work.html">Future Work</a>-->
         <!--<a href="./methodology.html">Methodology</a>-->
         <!--<a href="./challenges.html">Challenges</a>-->
+        <h1 class="fade-in-title">Results for CNN Model</h1>
       </div>
     </nav>
 
 
-     <div class="grid">
-        <section class="card span-6">
-          <div class="badge" id="left-badge"></div>
-          <h2 id="left-title"></h2> 
+<div class="grid fade-in-up" style="--delay: 0.1s;">
+  <section class="card span-6 fade-in-up" style="--delay: 0.2s;">
+    <div class="badge fade-in-up" style="--delay: 0.3s;" id="left-badge"></div>
+    <h2 class="fade-in-up" style="--delay: 0.35s;" id="left-title"></h2> 
         
-           <section class="results-summary">
+    <section class="results-summary fade-in-up" style="--delay: 0.4s;">
       <h2>Performance Summary</h2>
       <p>
         Our convolutional neural network (CNN) was trained and evaluated on the RT-IoT-2022 dataset.
@@ -39,16 +40,15 @@
     </section>
 
     <!--CNN results -->
-    <section id="cnn-image-results" class="results-images">
+     <section id="cnn-image-results" class="results-images fade-in-up" style="--delay: 0.5s;">
       <h2>Result Visualizations</h2>
       <p>
         The following figures show visualizations of the CNN model’s performance, including the
         confusion matrix and additional evaluation plots.
       </p>
 
-      <div class="image-grid">
-        <figure>
-          
+      <div class="image-grid fade-in-up" style="--delay: 0.6s;">
+        <figure class="fade-in-up" style="--delay: 0.65s;">
           <img src="static/images/1d binary CNN.png"
                alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
           <figcaption>Figure 1. Classification report and performance metrics for the CNN binary intrusion detection model.

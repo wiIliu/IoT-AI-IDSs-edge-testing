@@ -69,3 +69,90 @@ html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system
   height: auto;
   border-radius: 4px;
 }
+
+/*--- Animation settings ---*/
+
+/* ---- Fade + Slide for Page Title ---- */
+.fade-in-title {
+  opacity: 0;
+  animation: fadeSlideIn 1.2s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Nav Link Hover ---- */
+nav a {
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #3b82f6; /* soft blue accent — can change */
+  transform: translateY(-2px);
+}
+
+/* Optional underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a {
+  opacity: 0;
+  animation: fadeNav 0.8s ease forwards;
+}
+
+nav a:nth-child(1) { animation-delay: 0.2s; }
+nav a:nth-child(2) { animation-delay: 0.35s; }
+nav a:nth-child(3) { animation-delay: 0.5s; }
+nav a:nth-child(4) { animation-delay: 0.65s; }
+nav a:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes fadeNav {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Generic fade + slide up animation */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: var(--delay, 0s); /* customizable per element */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-card {
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}

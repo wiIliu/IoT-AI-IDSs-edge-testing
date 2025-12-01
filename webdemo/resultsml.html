@@ -11,93 +11,100 @@
   </head>
   <body>
     <nav class="nav">
-      <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
       <div>
-        <a class="active" href="./index.html">Overview</a>
-        <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
-        <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
-        <a href="./resultscnn.html">Results CNN</a>
-        <a href="./resultsml.html">Results ML</a>
-        <!--<a href="./future-work.html">Future Work</a>-->
-        <!--<a href="./methodology.html">Methodology</a>-->
-        <!--<a href="./challenges.html">Challenges</a>-->
+        <h1>Intrusion Detection in RT-IoT-2022</h1>
+
+        <a class="active fade-in-up" style="--delay: 0.1s;" href="./index.html">Overview</a>
+        <a class="fade-in-up" style="--delay: 0.15s;" href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+        <a class="fade-in-up" style="--delay: 0.2s;" href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+        <a class="fade-in-up" style="--delay: 0.25s;" href="./resultscnn.html">Results CNN</a>
+        <a class="fade-in-up" style="--delay: 0.3s;" href="./resultsml.html">Results ML</a>
+
+        <h1 class="fade-in-title" style="--delay: 0.35s;">Results for ML Model</h1>
       </div>
     </nav>
 
-
-     <div class="grid">
-        <!-- LEFT MODEL -->
-        <section class="card span-6">
-          <div class="badge" id="left-badge"></div>
-          <h2 id="left-title"></h2> 
+    <div class="grid fade-in-up" style="--delay: 0.4s;">
+      <!-- LEFT MODEL -->
+      <section class="card span-6 fade-in-up" style="--delay: 0.45s;">
+        <div class="badge fade-in-up" style="--delay: 0.5s;" id="left-badge"></div>
+        <h2 class="fade-in-up" style="--delay: 0.55s;" id="left-title"></h2> 
         
-           <section class="results-summary">
-      <h2>Performance Summary</h2>
-      <h1>Results for Traditional Machine Learning Models</h1>
+        <section class="results-summary fade-in-up" style="--delay: 0.6s;">
+          <h2>Performance Summary</h2>
+          <h1>Results for Traditional Machine Learning Models</h1>
 
-<p>
-The traditional machine learning models in this project were trained, validated, and evaluated using the RT-IoT-2022 dataset. The goal of these models was to perform both binary intrusion detection 
-(benign vs. malicious traffic) and multiclass attack classification. 
-The results shown below summarize the performance of the two baseline models used for comparison: Catboost and XGBoost.
-</p>
+          <p>
+            The traditional machine learning models in this project were trained, validated, and evaluated using the
+            RT-IoT-2022 dataset. The goal of these models was to perform both binary intrusion detection
+            (benign vs. malicious traffic) and multiclass attack classification.
+            The results shown below summarize the performance of the two baseline models used for comparison:
+            Catboost and XGBoost.
+          </p>
+        </section>
 
-    <!-- 🖼 Image section for CNN results -->
+        <!-- 🖼 Image section for ML results -->
+        <section id="ml-image-results" class="results-images fade-in-up" style="--delay: 0.7s;">
+          <h2>Result Visualizations</h2>
+          <p></p>
 
- <section id="cnn-image-results" class="results-images">
-      <h2>Result Visualizations</h2>
-      <p>
-        
-      </p>
+          <div class="image-grid fade-in-up" style="--delay: 0.8s;">
+            <figure class="fade-in-up" style="--delay: 0.85s;">
+              <img src="static/images/xgb classification report.png"
+                   alt="xgb classification report" />
+              <figcaption>
+                Figure 1. Performance metrics for the XGBoost multi-class intrusion detection model.
+                This table summarizes the model’s evaluation using accuracy, macro-averaged precision, recall,
+                and F1-score, alongside Matthews Correlation Coefficient (MCC). Additional ROC-AUC metrics
+                (one-vs-rest and one-vs-one) demonstrate near-perfect separability, indicating strong
+                generalization across multiple attack categories.
+              </figcaption>
+            </figure>
 
-      <div class="image-grid">
-        <figure>
-          
-          <img src="static/images/xgb classification report.png"
-               alt="xgb classification report" />
-          <figcaption>Figure 1. Performance metrics for the XGBoost multi-class intrusion detection model.
-This table summarizes the model’s evaluation using accuracy, macro-averaged precision, recall, and F1-score, 
-alongside Matthews Correlation Coefficient (MCC). Additional ROC-AUC metrics (one-vs-rest and one-vs-one) 
-demonstrate near-perfect separability, indicating strong generalization across multiple attack categories.</figcaption>
+            <figure class="fade-in-up" style="--delay: 0.9s;">
+              <img src="static/images/xgb confusion matrix.png"
+                   alt="xgb confusion matrix" />
+              <figcaption>
+                Figure 2. Confusion matrix visualizing the performance of the XGBoost classifier across all
+                traffic classes. The majority of predictions lie along the diagonal, showing high classification
+                accuracy across most attack types. Misclassification occurs primarily among low-support or
+                behaviorally similar traffic classes, reflecting dataset imbalance and feature overlap in
+                certain categories.
+              </figcaption>
+            </figure>
+          </div>
 
-      </figure>
+          <div class="image-grid fade-in-up" style="--delay: 1s;">
+            <figure class="fade-in-up" style="--delay: 1.05s;">
+              <img src="static/images/catboost classification report.png"
+                   alt="catboost classification report" />
+              <figcaption>
+                Figure 3. Evaluation metrics for the CatBoost binary intrusion detection model.
+                The model demonstrates extremely high precision, recall, F1-score, and MCC, indicating strong
+                overall detection capability for distinguishing malicious from benign network traffic.
+              </figcaption>
+            </figure>
 
-        <figure>
-          <img src="static/images/xgb confusion matrix.png"
-               alt="xgb confusion matrix" />
-          <figcaption>Figure 2. Confusion matrix visualizing the performance of the XGBoost classifier across all traffic classes.
-The majority of predictions lie along the diagonal, showing high classification accuracy across most attack types. Misclassification occurs 
-primarily among low-support or behaviorally similar traffic classes, reflecting dataset imbalance and feature overlap in certain categories.</figcaption>
-        </figure>
+            <figure class="fade-in-up" style="--delay: 1.1s;">
+              <img src="static/images/catboosstconfusionmatrix.png"
+                   alt="catboost confusion matrix" />
+              <figcaption>
+                Figure 4. Confusion matrix for the CatBoost binary classifier.
+                The model exhibits exceptional classification performance, correctly identifying the overwhelming
+                majority of samples with only minimal false positives and false negatives. The high concentration
+                of predictions on the diagonal reflects strong precision and recall for both classes.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
 
-      </div>
-
-            <div class="image-grid">
-        <figure>
-          <img src="static/images/catboost classification report.png"
-               alt="catboost classification report" />
-          <figcaption>Figure 3. Evaluation metrics for the CatBoost binary intrusion detection model.
-The model demonstrates extremely high precision, recall, F1-score, and MCC, indicating strong overall 
-detection capability for distinguishing malicious from benign network traffic. </figcaption>
-
-        </figure>
-
-        <figure>
-          <img src="static/images/catboosstconfusionmatrix.png"
-               alt="catboosstconfusionmatrix" />
-          <figcaption>Figure 4. Confusion matrix for the CatBoost binary classifier.
-The model exhibits exceptional classification performance, correctly identifying the 
-overwhelming majority of samples with only minimal false positives and false negatives. 
-The high concentration of predictions on the diagonal reflects strong precision and recall for both classes.</figcaption>
-        </figure>
-
-      </div>
-
-      <footer>© CSI4999 • Oakland University — Results</footer>
+        <footer class="fade-in-up" style="--delay: 1.2s;">
+          © CSI4999 • Oakland University — Results
+        </footer>
+      </section>
     </div>
-
 
     <script src="./static/app.js"></script>
   </body>
 </html>
-
 
