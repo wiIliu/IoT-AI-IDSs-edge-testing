@@ -9,17 +9,25 @@
 
 <body>
 
-<nav class="nav reveal">
+<nav class="nav reveal" style="--delay: 0s;">
   <div class="badge"><span class="dot"></span>CSI4999 Project Team</div>
   <div>
-    <a href="./index.html">Overview</a>
+     <a href="./index.html">Introduction</a>
+    <a href="./team.html"class="active">Meet the Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html" >Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html">Research Approach</a>
+    <a href="./realworldproblem.html">Real World Problem</a>
+    <a href="./ethicalimpact.html" >Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
     <a href="./resultscnn.html">Results CNN</a>
     <a href="./resultsml.html">Results ML</a>
-    <a href="./team.html" class="active">Meet the Team</a>
   </div>
 </nav>
 
-<div class="container reveal">
+<div class="container reveal" style="--delay: 0.1s;">
   <h1>Meet the Team</h1>
   <p class="small">
     Our project team consists of five dedicated researchers and developers who collaborated to design,
@@ -29,49 +37,44 @@
   <div class="team-grid">
 
     <!-- TEAM MEMBER 1 -->
-    <section class="team-card reveal" style="transition-delay: 0.05s;">
-      
+    <section class="team-card reveal" style="--delay: 0.2s;">
       <h2>Chelsea Pfeiffer</h2>
       <p class="role">Project Manager & Front-end Developer</p>
       <p class="bio">
-        Chelsea led the team to make sure our documentation was organized and submitted on time. She also built this website that displays our 
-        final product and organizes the information we have compiled throughout the semester, along with the project requirements. 
+        Chelsea led the team to make sure our documentation was organized and submitted on time. She also built this website that
+        displays our final product and organizes the information we have compiled throughout the semester, along with the project requirements.
       </p>
-      <img src="static/images/chelsea.jpg" alt="Team Member 1" class="team-photo" />
+      <img src="static/images/chelsea.jpg" alt="Chelsea Pfeiffer" class="team-photo" />
     </section>
 
     <!-- TEAM MEMBER 2 -->
-    <section class="team-card reveal" style="transition-delay: 0.1s;">
+    <section class="team-card reveal" style="--delay: 0.3s;">
       <h2>Josh Quintano</h2>
       <p class="role">CNN Back-end Developer</p>
       <p class="bio">
-       Joshua researched deep learning models and the current trends in deep learning regarding the types of models used popularly for 
-       intrusion detection in various research areas. He also developed the base CNN model that performed binary classification of messages. 
-       He has continued to fine-tune the training parameters of the model and has also added a self-attention layer to the model to explore 
-       the use of self-attention in feature pattern recognition. 
+        Joshua researched deep learning models and current trends in deep learning regarding the types of models used for intrusion detection
+        in various research areas. He developed the base CNN model that performed binary classification of messages and continued to fine-tune
+        training parameters while adding a self-attention layer to explore its impact on feature pattern recognition.
       </p>
-      <img src="static/images/josh.png" alt="Team Member 2" class="team-photo" />
+      <img src="static/images/josh.png" alt="Josh Quintano" class="team-photo" />
     </section>
 
     <!-- TEAM MEMBER 3 -->
-    <section class="team-card reveal" style="transition-delay: 0.15s;">
-      
+    <section class="team-card reveal" style="--delay: 0.4s;">
       <h2>Austin Tomo</h2>
       <p class="role">CNN Back-end Developer</p>
       <p class="bio">
-        Austin developed and implemented a CNN model for multi-class classification on all 12 attack types in the dataset. 
-        He adapted the tabular data into a structure suitable for CNN input and adjusted the architecture to handle multi-class output. 
-        He also integrated a self-attention layer into the multi-class CNN architecture to explore if its use would further improve the model’s performance. 
-        He fine-tuned the model’s parameters to improve accuracy.
+        Austin developed and implemented a CNN model for multi-class classification across all 12 attack types in the dataset.
+        He adapted the tabular data into a structure suitable for CNN input and adjusted the architecture to handle multi-class output.
+        He also integrated a self-attention layer into the multi-class CNN architecture and fine-tuned the model to improve accuracy.
       </p>
-      <img src="static/images/austin.png" alt="Team Member 3" class="team-photo" />
+      <img src="static/images/austin.png" alt="Austin Tomo" class="team-photo" />
     </section>
 
     <!-- TEAM MEMBER 4 -->
-    <section class="team-card reveal" style="transition-delay: 0.2s;">
-      
+    <section class="team-card reveal" style="--delay: 0.5s;">
       <h2>First Last Name</h2>
-      <p class="role">Data Analyst & ML Devloper</p>
+      <p class="role">Data Analyst & ML Developer</p>
       <p class="bio">
         ADD BIO
       </p>
@@ -79,22 +82,20 @@
     </section>
 
     <!-- TEAM MEMBER 5 -->
-    <section class="team-card reveal" style="transition-delay: 0.25s;">
-     
-      <h2>First Last Name</h2>
+    <section class="team-card reveal" style="--delay: 0.6s;">
+      <h2>Emma Gabos</h2>
       <p class="role">ML Back-End Developer</p>
       <p class="bio">
-       Emma helped develop and optimize the ensemble learning models for the IoT Intrusion Detection System. She participated in implementing 
-       and training the Random Forest, XGBoost, and CatBoost classifiers to improve detection accuracy and model performance. 
-       This included multi-model training, hyperparameter tuning, and evaluating model metrics. Specifically, she researched and integrated 
-       CatBoost into the ensemble for its effectiveness with categorical data, which enhanced overall model diversity and adaptability.
+        Emma helped develop and optimize the ensemble learning models for the IoT Intrusion Detection System. She participated in implementing
+        and training the Random Forest, XGBoost, and CatBoost classifiers to improve detection accuracy and model performance. She researched
+        and integrated CatBoost into the ensemble for its effectiveness with categorical data, enhancing overall model diversity and adaptability.
       </p>
-       <img src="static/images/emma.png" alt="Team Member 5" class="team-photo" />
+      <img src="static/images/emma.png" alt="Team Member 5" class="team-photo" />
     </section>
 
   </div>
 
-  <footer class="reveal" style="transition-delay: 0.3s;">
+  <footer class="reveal" style="--delay: 0.7s;">
     © CSI4999 • Oakland University — Team
   </footer>
 </div>

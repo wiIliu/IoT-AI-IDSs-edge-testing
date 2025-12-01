@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Approach | IDS in IoT using AI</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <h1 class="fade-in-title">Intrusion Detection in RT-IoT-2022</h1>
+  <div>
+
+     <a href="./index.html">Introduction</a>
+    <a href="./team.html">Meet The Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html" >Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html"class="active">Research Approach</a>
+    <a href="./realworldproblem.html">Real World Problem</a>
+    <a href="./ethicalimpact.html" >Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+    <a href="./resultscnn.html">Results CNN</a>
+    <a href="./resultsml.html">Results ML</a>
+  </div>
+</nav>
+
+<div class="container reveal" style="--delay: 0.1s;">
+
+  <header class="hero">
+    <h1 class="fade-in-title">Research Approach</h1>
+    <p class="small fade-in-up" style="--delay: 0.2s;">
+      The methodology followed to design, evaluate, and benchmark machine learning and deep learning-based intrusion detection models.
+    </p>
+  </header>
+
+  <div class="grid fade-in-up" style="--delay: 0.3s;">
+    <section class="card span-8 fade-in-up" style="--delay: 0.4s;">
+
+      <ul>
+        <li><strong>Train and evaluate ML and CNN models using the RT-IoT-2022 dataset.</strong></li>
+        <li><strong>Perform binary and multi-class intrusion classification.</strong></li>
+        <li><strong>Apply model tuning, optimization, and ensemble evaluation.</strong></li>
+        <li><strong>Measure accuracy, precision, recall, F1-score, MCC, and runtime performance.</strong></li>
+      </ul>
+
+      <footer style="margin-top: 1.5rem; text-align: right; font-size: 0.9rem; color: var(--muted);">
+        Austin Tomo
+      </footer>
+    </section>
+  </div>
+
+</div>
+
+<script src="static/app.js"></script>
+
+<!-- Scroll Reveal Script -->
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+
+  function handleScrollReveal() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScrollReveal);
+  window.addEventListener('load', handleScrollReveal);
+</script>
+
+</body>
+</html>

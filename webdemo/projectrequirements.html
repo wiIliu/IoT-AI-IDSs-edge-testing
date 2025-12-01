@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Requirements | IDS in IoT using AI Solutions</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+
+<body>
+
+  <!-- Top navigation -->
+  <nav class="nav">
+    <div class="badge">
+      <span class="dot"></span>
+      CSI4999 IDS in IoT
+    </div>
+    <div>
+     <a href="./index.html">Introduction</a>
+    <a href="./team.html">Meet The Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html" class="active">Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html">Research Approach</a>
+    <a href="./realworldproblem.html">Real-World Problem</a>
+    <a href="./ethicalimpact.html" >Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+    <a href="./resultscnn.html">Results CNN</a>
+    <a href="./resultsml.html">Results ML</a>
+    </div>
+  </nav>
+
+  <div class="container reveal" style="--delay: 0.1s;">
+
+    <header class="hero">
+      <h1 class="fade-in-title">Project Requirements</h1>
+      <p class="small fade-in-up" style="--delay: 0.15s;">
+        Core functional and evaluation requirements for the IDS in IoT capstone project.
+      </p>
+    </header>
+
+    <div class="grid fade-in-up" style="--delay: 0.25s;">
+      <section class="card span-8 fade-in-up" style="--delay: 0.3s;">
+        <h2>Milestone Requirements</h2>
+        <ul>
+          <li>Detect malicious vs. normal IoT network traffic.</li>
+          <li>Implement both machine learning (ML) and deep learning (DL) models.</li>
+          <li>
+            Compare performance, accuracy, and real-world feasibility of each approach.
+          </li>
+          <li>
+            Display evaluation results through a web-based interface for easier analysis.
+          </li>
+          <li>
+            Ensure all requirements are fully implemented and demonstrated for this milestone.
+          </li>
+        </ul>
+
+        <footer style="margin-top: 1.5rem; text-align: right; font-size: 0.9rem; color: var(--muted);">
+          Chelsea Pfeiffer
+        </footer>
+      </section>
+    </div>
+
+  </div>
+
+  <script src="static/app.js"></script>
+
+  <!-- Scroll reveal script (same pattern as other pages) -->
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+
+    function handleScrollReveal() {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScrollReveal);
+    window.addEventListener('load', handleScrollReveal);
+  </script>
+
+</body>
+</html>
