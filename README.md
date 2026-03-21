@@ -3,7 +3,7 @@
 <a href="https://github.com/wiIliu/python-CICD-pipeline/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-purple"></a>
 [![Dataset: UCI RT-IoT2022](https://img.shields.io/badge/Dataset-UCI%20RT--IoT2022-blue)](https://archive.ics.uci.edu/dataset/942/rt-iot2022)
 [![Dateset DOI](https://img.shields.io/badge/DOI-10.24432%2FC5P338-blue)](https://doi.org/10.24432/C5P338)
-![Data License](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey)
+[![Data License](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey)](https://creativecommons.org/licenses/by/4.0/legalcode)
 [![Paper: Undergraduate Thesis](https://img.shields.io/badge/Paper-Undergraduate%20Thesis-orange)](./docs/willowConnelly-thesis-RealTimeIoTIDS-EvaluatingMLDLandEdgeDeploymentOnKriaKV260.pdf)
 
 
