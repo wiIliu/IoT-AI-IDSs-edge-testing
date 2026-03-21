@@ -327,4 +327,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-_Thank you for visiting **CSI4999_IDSwithAI**! If you have any questions or issues, feel free to open an [issue](../../issues) or reach out._
+_Thank you for visiting **IoT-AI-IDSs-edge-testing**! If you have any questions or issues, feel free to open an [issue](../../issues) or reach out._
