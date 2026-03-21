@@ -1,4 +1,11 @@
 # CSI4999 — Intrusion Detection at the Edge in IoT
+![Python](https://img.shields.io/badge/python-3.12-blue) 
+<a href="https://github.com/wiIliu/python-CICD-pipeline/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-purple"></a>
+[![Dataset: UCI RT-IoT2022](https://img.shields.io/badge/Dataset-UCI%20RT--IoT2022-blue)](https://archive.ics.uci.edu/dataset/942/rt-iot2022)
+[![Dateset DOI](https://img.shields.io/badge/DOI-10.24432%2FC5P338-blue)](https://doi.org/10.24432/C5P338)
+![Data License](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey)
+[![Paper: Undergraduate Thesis](https://img.shields.io/badge/Paper-Undergraduate%20Thesis-orange)](./docs/paper.pdf)
+
 
 Investigating ML vs. DL-based intrusion detection systems (IDS) for IoT networks, with edge deployment on an FPGA.
 
@@ -16,23 +23,24 @@ A practical comparison demonstrating:
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Features](#features)
-3. [Project Structure](#project-structure)
-4. [Installation](#installation)
+2. [Thesis](#thesis}
+3. [Features](#features)
+4. [Project Structure](#project-structure)
+5. [Installation](#installation)
    - [Creating & Activating a Conda Environment](#creating--activating-a-conda-environment)
    - [Installing Dependencies](#installing-dependencies)
-5. [Usage](#usage)
+6. [Usage](#usage)
    - [Data Preparation](#data-preparation)
    - [Model Training](#model-training)
    - [Evaluation](#evaluation)
-6. [Results](#results)
+7. [Results](#results)
    - [Binary Classification](#binary-classification)
    - [Multi-Class Classification](#multi-class-classification)
    - [Edge Deployment](#edge-deployment)
-7. [Limitations & Future Work](#limitations--future-work)
-8. [Contributing](#contributing)
-9. [License](#license)
-10. [References](#references)
+8. [Limitations & Future Work](#limitations--future-work)
+9. [Contributing](#contributing)
+10. [License](#license)
+11. [References](#references)
 
 ---
 
@@ -46,6 +54,20 @@ A practical comparison demonstrating:
 - Training and evaluating RF, XGBoost, and CNN (± self-attention) on a recent IoT IDS dataset across both binary and multi-class objectives
 - Quantitative comparison of ML vs. DL trade-offs in accuracy, F1, MCC, and computational overhead — relevant to resource-constrained IoT environments
 - Proof-of-concept edge deployment of a quantized CNN on a Kria KV260 FPGA, demonstrating real-time inference capability at the network gateway
+
+---
+
+## 📄 Thesis
+
+This repository originated as a group capstone project.  
+The accompanying thesis was **independently authored** as part of the Oakland University Young's Honors College and expands on the ideas explored here.
+
+- **Author:** Willow Connelly
+- **Title:** _Real-Time Intrusion Detection for IoT Networks: Evaluating ML/DL Models and Feasibility of Edge Deployment on the Kria KV260_
+- **Type:** Undergraduate Honors Thesis (Awarded: Thesis of Distinction)  
+- **Scope:** Independent work. Contributions include data preprocessing, significant ML/DL modeling, and all edge deployment work.
+
+[Read the thesis](./docs/paper.pdf)
 
 ---
 
