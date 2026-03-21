@@ -4,7 +4,7 @@
 [![Dataset: UCI RT-IoT2022](https://img.shields.io/badge/Dataset-UCI%20RT--IoT2022-blue)](https://archive.ics.uci.edu/dataset/942/rt-iot2022)
 [![Dateset DOI](https://img.shields.io/badge/DOI-10.24432%2FC5P338-blue)](https://doi.org/10.24432/C5P338)
 ![Data License](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey)
-[![Paper: Undergraduate Thesis](https://img.shields.io/badge/Paper-Undergraduate%20Thesis-orange)](./docs/paper.pdf)
+[![Paper: Undergraduate Thesis](https://img.shields.io/badge/Paper-Undergraduate%20Thesis-orange)](./docs/willowConnelly-thesis-RealTimeIoTIDS-EvaluatingMLDLandEdgeDeploymentOnKriaKV260.pdf)
 
 
 Investigating ML vs. DL-based intrusion detection systems (IDS) for IoT networks, with edge deployment on an FPGA.
@@ -67,7 +67,7 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 - **Type:** Undergraduate Honors Thesis (Awarded: Thesis of Distinction)  
 - **Scope:** Independent work. Contributions include data preprocessing, significant ML/DL modeling, and all edge deployment work.
 
-[Read the thesis](./docs/paper.pdf)
+[Read the thesis](./docs/willowConnelly-thesis-RealTimeIoTIDS-EvaluatingMLDLandEdgeDeploymentOnKriaKV260.pdf)
 
 ---
 
