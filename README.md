@@ -57,7 +57,7 @@ A practical comparison demonstrating:
 
 ---
 
-## 📄 Thesis
+## Thesis
 
 This repository originated as a group capstone project.  
 The accompanying thesis was **independently authored** as part of the Oakland University Young's Honors College and expands on the ideas explored here.
