@@ -93,8 +93,8 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 ├── dataPreprocessScript.py               # Loads and splits RT-IoT2022 (80/20 train/test)
 ├── dataAnalysisVisualization.ipynb       # Dataset analysis and class distribution visualization
 │
-├── ml_binary_trainingValidation.ipynb    # ML binary: XGBoost, RF — trains, tunes, validates, exports
-├── ml_multi_trainingValidation.ipynb     # ML multi-class: XGBoost, RF, CatBoost — trains, tunes, validates, exports
+├── ml_binary_trainingValidation.ipynb    # ML binary: XGBoost, RF: trains, tunes, validates, exports
+├── ml_multi_trainingValidation.ipynb     # ML multi-class: XGBoost, RF, CatBoost: trains, tunes, validates, exports
 │
 ├── 1dcnn_binary.ipynb                    # 1D CNN binary classification
 ├── 1dcnn_binary selfattn.ipynb           # 1D CNN + self-attention binary classification
@@ -104,27 +104,13 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 ├── latencyTiming.ipynb                   # Per-sample latency benchmarking across models and hardware
 │
 ├── models/                               # Exported model checkpoints
-│   ├── 1dcnn_binary.pth
-│   ├── 1dcnn_binary_attn.pth
-│   ├── 1dcnn_multiclass.pth
-│   ├── 1dcnn_multiclass_attn.pth
-│   ├── best_binary_model.pkl             # Best ML binary model
-│   ├── best_multi_ml.pkl                 # Best ML multi-class model
-│   ├── rf_binary_model.pkl / rf_multi_model.pkl
-│   ├── xgb_binary_model.pkl / xgb_multi_model.pkl
-│   └── catboost_binary_model.pkl / catboost_multi_model.pkl
-│
 ├── classification_reports/               # CSV evaluation metrics per model
 ├── confusionmatrices/                    # Confusion matrix PNGs per model
 │
 ├── edge/                                 # Edge deployment (Vitis AI / Kria KV260)
-│   ├── 2dcnn_binary.ipynb                # 2D CNN binary classification
-│   ├── 2dcnn_binary selfattn.ipynb       # 2D CNN + self-attention binary
-│   ├── 2dcnn_multi.ipynb                 # 2D CNN multi-class classification
-│   ├── 2dcnn_multi_selfattn.ipynb        # 2D CNN + self-attention multi-class
+│   ├── {per model training}.ipynb        # Model training notebooks
 │   ├── BinaryCNN_classFile.py            # Model class definition for binary 2D CNN
 │   ├── MultiCNN_classFile.py             # Model class definition for multi-class 2D CNN
-│   ├── MultiAttnCNN_classFile.py         # Model class definition for multi-class 2D CNN + attention
 │   ├── binaryQuantizer.py                # Quantizes binary CNN model (Vitis AI)
 │   ├── multiQuantizer.py                 # Quantizes multi-class CNN model (Vitis AI)
 │   ├── binaryTestLoader.py               # DataLoader for binary calibration/eval
@@ -137,15 +123,6 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 │   └── cnn_compile.sh                    # Vitis AI compile script
 │
 ├── webdemo/                              # Project website
-│   ├── index.html
-│   ├── methodology.html
-│   ├── challenges.html
-│   ├── results.html
-│   ├── future-work.html
-│   ├── server.js
-│   └── static/
-│       ├── app.js
-│       └── style.css
 │
 ├── environment.yml                       # Conda environment definition
 └── requirements.txt                      # pip dependencies
