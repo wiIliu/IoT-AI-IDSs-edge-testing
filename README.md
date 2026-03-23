@@ -7,6 +7,8 @@
 [![Paper: Undergraduate Thesis](https://img.shields.io/badge/Paper-Undergraduate%20Thesis-orange)](./docs/willowConnelly-thesis-RealTimeIoTIDS-EvaluatingMLDLandEdgeDeploymentOnKriaKV260.pdf)
 
 
+> **TL;DR** — Deployed ML/DL models for real-time IoT intrusion detection on a Xilinx Kria KV260 FPGA, achieving 0.18ms per-sample inference latency and 99.9% binary F1, with full benchmarking against Random Forest and XGBoost baselines.
+
 Investigating ML vs. DL-based intrusion detection systems (IDS) for IoT networks, with edge deployment on an FPGA.
 
 A practical comparison demonstrating:
