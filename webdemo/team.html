@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Team | IDS in IoT using AI Solutions</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
+
+<body>
+
+<nav class="nav">
+  <h1 class="fade-in-title">Intrusion Detection in RT-IoT-2022</h1>
+  <div>
+     <a href="./index.html">Introduction</a>
+    <a href="./team.html"class="active">Meet the Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html" >Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html">Research Approach</a>
+    <a href="./realworldproblem.html">Real World Problem</a>
+    <a href="./ethicalimpact.html" >Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+    <a href="./resultscnn.html">Results CNN</a>
+    <a href="./resultsml.html">Results ML</a>
+    <a href="./resultsdl.html">Results DL</a>
+  </div>
+</nav>
+
+<div class="container reveal" style="--delay: 0.1s;">
+  <h1>Meet the Team</h1>
+  <p class="small">
+    Our project team consists of five dedicated researchers and developers who collaborated to design,
+    build, and evaluate intrusion detection solutions for IoT environments.
+  </p>
+
+  <div class="team-grid">
+
+    <!-- TEAM MEMBER 1 -->
+    <section class="team-card reveal" style="--delay: 0.2s;">
+      <h2>Chelsea Pfeiffer</h2>
+      <p class="role">Project Manager & Front-end Developer</p>
+      <p class="bio">
+        Chelsea led the team to make sure our documentation was organized and submitted on time. She also built this website that
+        displays our final product and organizes the information we have compiled throughout the semester, along with the project requirements.
+      </p>
+      <img src="static/images/chelsea.jpg" alt="Chelsea Pfeiffer" class="team-photo" />
+    </section>
+
+    <!-- TEAM MEMBER 2 -->
+    <section class="team-card reveal" style="--delay: 0.3s;">
+      <h2>Josh Quintano</h2>
+      <p class="role">CNN Back-end Developer</p>
+      <p class="bio">
+        Joshua researched deep learning models and current trends in deep learning regarding the types of models used for intrusion detection
+        in various research areas. He developed the base CNN model that performed binary classification of messages and continued to fine-tune
+        training parameters while adding a self-attention layer to explore its impact on feature pattern recognition.
+      </p>
+      <img src="static/images/josh.png" alt="Josh Quintano" class="team-photo" />
+    </section>
+
+    <!-- TEAM MEMBER 3 -->
+    <section class="team-card reveal" style="--delay: 0.4s;">
+      <h2>Austin Tomo</h2>
+      <p class="role">CNN Back-end Developer</p>
+      <p class="bio">
+        Austin developed and implemented a CNN model for multi-class classification across all 12 attack types in the dataset.
+        He adapted the tabular data into a structure suitable for CNN input and adjusted the architecture to handle multi-class output.
+        He also integrated a self-attention layer into the multi-class CNN architecture and fine-tuned the model to improve accuracy.
+      </p>
+      <img src="static/images/austin.png" alt="Austin Tomo" class="team-photo" />
+    </section>
+
+    <!-- TEAM MEMBER 4 -->
+    <section class="team-card reveal" style="--delay: 0.5s;">
+      <h2>Willow Connelly</h2>
+      <p class="role">Data Analyst & ML Developer</p>
+      <p class="bio">
+        Willow Connelly worked as the data analyst, researching the RT-IoT2022 dataset and prepping the data for training and testing. 
+        Preprocessing steps included splitting the data, generating visualizations to understand data distributions, calculating feature 
+        importance, encoding, normalization, and class balancing. Connelly also worked with Gabos on designing and testing the ML models, 
+        Random Forest and XGBoost, used in this study. Finally, she researched the feasibility of deployment of the DL models at the edge 
+        by quantizing the models and testing inference on a Kria KV260.
+      </p>
+      <img src="static/images/willow.png" alt="Team Member 4" class="team-photo" />
+    </section>
+
+    <!-- TEAM MEMBER 5 -->
+    <section class="team-card reveal" style="--delay: 0.6s;">
+      <h2>Emma Gabos</h2>
+      <p class="role">ML Back-End Developer</p>
+      <p class="bio">
+        Emma helped develop and optimize the ensemble learning models for the IoT Intrusion Detection System. She participated in implementing
+        and training the Random Forest, XGBoost, and CatBoost classifiers to improve detection accuracy and model performance. She researched
+        and integrated CatBoost into the ensemble for its effectiveness with categorical data, enhancing overall model diversity and adaptability.
+      </p>
+      <img src="static/images/emma.png" alt="Team Member 5" class="team-photo" />
+    </section>
+
+  </div>
+
+  <footer class="reveal" style="--delay: 0.7s;">
+    © CSI4999 • Oakland University — Team
+  </footer>
+</div>
+
+<script src="static/app.js"></script>
+
+<!-- Scroll reveal script -->
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+
+  function handleScrollReveal() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScrollReveal);
+  window.addEventListener('load', handleScrollReveal);
+</script>
+
+</body>
+</html>

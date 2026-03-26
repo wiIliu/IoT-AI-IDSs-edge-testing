@@ -1,11 +1,13 @@
 # CSI4999 — Intrusion Detection at the Edge in IoT
 ![Python](https://img.shields.io/badge/python-3.12-blue) 
-<a href="https://github.com/wiIliu/python-CICD-pipeline/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-purple"></a>
+<a href="https://github.com/wiIliu/IoT-AI-IDSs-edge-testing/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-purple"></a>
 [![Dataset: UCI RT-IoT2022](https://img.shields.io/badge/Dataset-UCI%20RT--IoT2022-blue)](https://archive.ics.uci.edu/dataset/942/rt-iot2022)
 [![Dateset DOI](https://img.shields.io/badge/DOI-10.24432%2FC5P338-blue)](https://doi.org/10.24432/C5P338)
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20BY%204.0-lightgrey)](https://creativecommons.org/licenses/by/4.0/legalcode)
 [![Paper: Undergraduate Thesis](https://img.shields.io/badge/Paper-Undergraduate%20Thesis-orange)](./docs/willowConnelly-thesis-RealTimeIoTIDS-EvaluatingMLDLandEdgeDeploymentOnKriaKV260.pdf)
 
+
+> **TL;DR** — Deployed ML/DL models for real-time IoT intrusion detection on a Xilinx Kria KV260 FPGA, achieving 0.18ms per-sample inference latency and 99.9% binary F1, with full benchmarking against Random Forest and XGBoost baselines.
 
 Investigating ML vs. DL-based intrusion detection systems (IDS) for IoT networks, with edge deployment on an FPGA.
 
@@ -23,7 +25,7 @@ A practical comparison demonstrating:
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Thesis](#thesis}
+2. [Thesis](#thesis)
 3. [Features](#features)
 4. [Project Structure](#project-structure)
 5. [Installation](#installation)
@@ -91,8 +93,8 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 ├── dataPreprocessScript.py               # Loads and splits RT-IoT2022 (80/20 train/test)
 ├── dataAnalysisVisualization.ipynb       # Dataset analysis and class distribution visualization
 │
-├── ml_binary_trainingValidation.ipynb    # ML binary: XGBoost, RF — trains, tunes, validates, exports
-├── ml_multi_trainingValidation.ipynb     # ML multi-class: XGBoost, RF, CatBoost — trains, tunes, validates, exports
+├── ml_binary_trainingValidation.ipynb    # ML binary: XGBoost, RF: trains, tunes, validates, exports
+├── ml_multi_trainingValidation.ipynb     # ML multi-class: XGBoost, RF, CatBoost: trains, tunes, validates, exports
 │
 ├── 1dcnn_binary.ipynb                    # 1D CNN binary classification
 ├── 1dcnn_binary selfattn.ipynb           # 1D CNN + self-attention binary classification
@@ -102,27 +104,13 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 ├── latencyTiming.ipynb                   # Per-sample latency benchmarking across models and hardware
 │
 ├── models/                               # Exported model checkpoints
-│   ├── 1dcnn_binary.pth
-│   ├── 1dcnn_binary_attn.pth
-│   ├── 1dcnn_multiclass.pth
-│   ├── 1dcnn_multiclass_attn.pth
-│   ├── best_binary_model.pkl             # Best ML binary model
-│   ├── best_multi_ml.pkl                 # Best ML multi-class model
-│   ├── rf_binary_model.pkl / rf_multi_model.pkl
-│   ├── xgb_binary_model.pkl / xgb_multi_model.pkl
-│   └── catboost_binary_model.pkl / catboost_multi_model.pkl
-│
 ├── classification_reports/               # CSV evaluation metrics per model
 ├── confusionmatrices/                    # Confusion matrix PNGs per model
 │
 ├── edge/                                 # Edge deployment (Vitis AI / Kria KV260)
-│   ├── 2dcnn_binary.ipynb                # 2D CNN binary classification
-│   ├── 2dcnn_binary selfattn.ipynb       # 2D CNN + self-attention binary
-│   ├── 2dcnn_multi.ipynb                 # 2D CNN multi-class classification
-│   ├── 2dcnn_multi_selfattn.ipynb        # 2D CNN + self-attention multi-class
+│   ├── {per model training}.ipynb        # Model training notebooks
 │   ├── BinaryCNN_classFile.py            # Model class definition for binary 2D CNN
 │   ├── MultiCNN_classFile.py             # Model class definition for multi-class 2D CNN
-│   ├── MultiAttnCNN_classFile.py         # Model class definition for multi-class 2D CNN + attention
 │   ├── binaryQuantizer.py                # Quantizes binary CNN model (Vitis AI)
 │   ├── multiQuantizer.py                 # Quantizes multi-class CNN model (Vitis AI)
 │   ├── binaryTestLoader.py               # DataLoader for binary calibration/eval
@@ -135,15 +123,6 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 │   └── cnn_compile.sh                    # Vitis AI compile script
 │
 ├── webdemo/                              # Project website
-│   ├── index.html
-│   ├── methodology.html
-│   ├── challenges.html
-│   ├── results.html
-│   ├── future-work.html
-│   ├── server.js
-│   └── static/
-│       ├── app.js
-│       └── style.css
 │
 ├── environment.yml                       # Conda environment definition
 └── requirements.txt                      # pip dependencies
@@ -327,4 +306,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-_Thank you for visiting **CSI4999_IDSwithAI**! If you have any questions or issues, feel free to open an [issue](../../issues) or reach out._
+_Thank you for visiting **IoT-AI-IDSs-edge-testing**! If you have any questions or issues, feel free to open an [issue](../../issues) or reach out._

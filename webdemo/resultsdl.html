@@ -1,78 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Results for Deep Learning Models | IDS in IoT using AI Solutions</title>
-    <link rel="stylesheet" href="static/styles.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results – DL Runtime | IDS in IoT using AI</title>
+  <link rel="stylesheet" href="static/styles.css" />
+</head>
 
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
-      <div>
-        <a class="active" href="./index.html">Overview</a>
-        <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
-        <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
-        <a href="./resultscnn.html">Results CNN</a>
-        <a href="./resultsml.html">Results ML</a>
-        <a href="./resultsdl.html">Results DL</a>
-        <!--<a href="./future-work.html">Future Work</a>-->
-        <!--<a href="./methodology.html">Methodology</a>-->
-        <!--<a href="./challenges.html">Challenges</a>-->
-      </div>
-    </nav>
+<body>
 
+<!-- Top navigation -->
+<nav class="nav">
+  <h1 class="fade-in-title">Intrusion Detection in RT-IoT-2022</h1>
+  <div>
+    <a href="./index.html">Introduction</a>
+    <a href="./team.html">Meet The Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html">Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html">Research Approach</a>
+    <a href="./realworldproblem.html">Real-World Problem</a>
+    <a href="./ethicalimpact.html">Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+    <a href="./resultscnn.html">Results CNN</a>
+    <a href="./resultsml.html">Results ML</a>
+    <a class="active" href="./resultsdl.html">Results DL (Latency)</a>
+  </div>
+</nav>
 
-     <div class="grid">
-        <!-- LEFT MODEL -->
-        <section class="card span-6">
-          <div class="badge" id="left-badge"></div>
-          <h2 id="left-title"></h2> 
-        
-           <section class="results-summary">
-      <h1>Results for Deep Learning Models</h1>
+<div class="container reveal" style="--delay: 0.1s;">
 
-<p>
-The deep learning models implemented in this project were trained, validated, and evaluated using the RT-IoT-2022 dataset. These models were designed to perform both binary intrusion detection
-(benign vs. malicious traffic) and multiclass classification across multiple attack types. The evaluation below highlights the performance of the deployed convolutional neural network (CNN) architectures.
-</p>
+  <header class="hero">
+    <h1 class="fade-in-title">Runtime Performance of Models</h1>
+    <h3>Presented by: Willow Connelly</h3>
+    <p class="small fade-in-up" style="--delay: 0.2s;">
+      Latency results (in milliseconds) for deep learning (CNN) and traditional machine learning
+      models running on different hardware platforms, averaged over 5000 inferences.
+    </p>
+  </header>
 
-<p>
-Multiple deep learning configurations were tested, including standard 1D and 2D CNN architectures as well as enhanced versions incorporating attention mechanisms to improve feature learning and classification 
-accuracy. Key evaluation metrics such as accuracy, precision, recall, and F1-score were computed to assess detection performance in both binary and multiclass scenarios.
-</p>
+  <!-- Multiclass -->
+  <section class="card span-8 fade-in-up" style="--delay: 0.3s; margin-top: 1.5rem;">
+    <h2>Multiclass Models – Latency Comparison</h2>
+    <p>
+      This figure compares average latency for multiclass intrusion detection models deployed on
+      several hardware configurations. Lower values indicate faster inference.
+    </p>
 
-      <ul>
-        <li>Accuracy: <strong>XX.XX%</strong></li>
-        <li>Precision: <strong>XX.XX%</strong></li>
-        <li>Recall: <strong>XX.XX%</strong></li>
-        <li>F1-Score: <strong>XX.XX%</strong></li>
-      </ul>
-    </section>
+    <figure class="results-images">
+      <img
+        src="static/images/modelonhardwaretype.png"
+        alt="Bar chart showing latency of multiclass models on different hardware types."
+        class="resultsdl-img"
+      />
+      <figcaption style="margin-top:0.75rem; color: var(--muted); font-size:0.9rem;">
+        <strong>Figure 1.</strong> Latency of Multiclass Models on Different Hardware Averaged over 5000 Iterations.
+      </figcaption>
+    </figure>
+  </section>
 
-    <!-- 🖼 Image section for DL results -->
-    <section id="dl-image-results" class="results-images">
-  <h2>Result Visualizations</h2>
-  <p>
-    The figures below include confusion matrices, ROC curves, precision-recall visualizations, and performance distribution charts used to evaluate the CNN-based deep learning models.
-  </p>
-</section>
+  <!-- Binary -->
+  <section class="card span-8 fade-in-up" style="--delay: 0.4s; margin-top: 1.5rem;">
+    <h2>Binary Models – Latency Comparison</h2>
+    <p>
+      This figure reports average latency for binary intrusion detection models on the same hardware
+      types, again averaged over 5000 inferences.
+    </p>
 
-        <!-- Add or remove figures as needed -->
-      </div>
-    </section>
-  </main>
-    
+    <figure class="results-images">
+      <img
+        src="static/images/modelonhardwaretype2.png"
+        alt="Bar chart showing latency of binary models on different hardware types."
+        class="resultsdl-img"
+      />
+      <figcaption style="margin-top:0.75rem; color: var(--muted); font-size:0.9rem;">
+        <strong>Figure 2.</strong> Latency of Binary Models on Different Hardware Averaged over 5000 Iterations.
+      </figcaption>
+    </figure>
+  </section>
 
-      <footer>© CSI4999 • Oakland University — Results</footer>
-    </div>
+  <footer class="fade-in-up" style="--delay:0.5s; margin-top:2rem; text-align:center; color:var(--muted); font-size:0.9rem;">
+    CSI4999 • Oakland University — Runtime Evaluation of DL vs ML Models
+  </footer>
 
+</div>
 
-    <script src="./static/app.js"></script>
-  </body>
+<script src="static/app.js"></script>
+
+<!-- Scroll reveal script -->
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+
+  function handleScrollReveal() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealEls.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScrollReveal);
+  window.addEventListener('load', handleScrollReveal);
+</script>
+
+</body>
 </html>
-
-

@@ -1,120 +1,45 @@
 <!doctype html>
-<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Senior Capstone CSI 4999 • IoT IDS (ML vs DL)</title>
-    <link rel="stylesheet" href="static/styles.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Senior Capstone CSI 4999 • IoT IDS (ML vs DL)</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
 
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
-      <div>
-        <a class="active" href="./index.html">Overview</a>
-        <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
-        <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
-        <a href="./resultscnn.html">Results CNN</a>
-        <a href="./resultsml.html">Results ML</a>
-        <a href="./resultsdl.html">Results DL</a>
-        <!--<a href="./future-work.html">Future Work</a>-->
-        <!--<a href="./methodology.html">Methodology</a>-->
-        <!--<a href="./challenges.html">Challenges</a>-->
-      </div>
-    </nav>
-    <div class="container">
-      <h1>Intrusion Detection in RT-IoT-2022</h1>
-      <p class="small">A practical comparison of traditional ML (ensembles) vs DL (CNN) for binary and multi-class classification.</p>
+<body>
 
+<nav class="nav">
+  <h1 class="fade-in-title">Intrusion Detection in RT-IoT-2022</h1>
+  <div>
+     <a href="./index.html"class="active">Introduction</a>
+    <a href="./team.html">Meet The Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html" >Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html">Research Approach</a>
+    <a href="./realworldproblem.html">Real-World Problem</a>
+    <a href="./ethicalimpact.html" >Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+    <a href="./resultscnn.html">Results CNN</a>
+    <a href="./resultsml.html">Results ML</a>
+    <a href="./resultsdl.html">Results DL</a>
+  </div>
+</nav>
 
-      <div class="grid">
-        <section class="card span-8">
-          <h2>What is this?</h2>
-          <p>
-            The project includes four deep learning models based on convolutional neural networks (CNNs): 
-            (1) a binary CNN classifier, (2) a multiclass CNN classifier, 
-            (3) an enhanced CNN model incorporating a self-attention mechanism for binary classification, and 
-            (4) a self-attention CNN for multiclass intrusion detection. 
-            These models were trained and evaluated using the RT-IoT-2022 dataset to detect malicious network activity at both 
-            binary and multiclass levels.
-            Training occurs offline and the code is static. 
-          </p>
-          <p>
-            Use the <b>Results</b> page to view metrics.
-            <br>
-             <br>
-              <br>
-               <br>
-          </p>
-           <footer>CSI4999 • Oakland University — IDS Comparison UI</footer>
-        </section>
+<div class="container">
 
+  <!-- HERO IMAGE -->
+  <section class="hero-panel fade-in-up" style="--delay: .3s;">
+    <img src="static/images/intro.png" alt="Intro Splash" class="hero-slide">
+  </section>
 
-<!--        <section class="card span-4">
-          <h2>How to update results</h2>
-          <ol class="small">
-            <li>Run your training notebooks/scripts.</li>
-            <li>Export metrics to <code>webdemo/data/results.json</code>.</li>
-            <li>Start the server: <code>node server.js</code>.</li>
-            <li>Refresh <code>/results.html</code>.</li>
-          </ol>
-        </section>
+  <footer class="fade-in-up" style="--delay:.6s;">
+    CSI4999 • Oakland University — IDS Comparison UI
+  </footer>
 
+</div>
 
-        <section class="card span-12">
-          <h2>Schema (data/results.json)</h2>
-<pre class="small">{
-  "dataset": {"name":"RT-IoT-2022", "version":"1.0"},
-  "task": "binary | multiclass",
-  "split": "train: 80%, test: 20%",
-  "generated_at": "2025-11-10T10:00:00Z",
-  "models": [
-    {
-      "name": "XGBoost (binary)",
-      "type": "ml",
-      "variant": "xgboost",
-      "artifact": "./models/xgb_binary.pkl",
-      "metrics": {
-        "accuracy": 0.9784,
-        "macro_precision": 0.9761,
-        "macro_recall": 0.9755,
-        "macro_f1": 0.9757
-      },
-      "per_class": [
-        {"label":"benign","precision":0.98,"recall":0.97,"f1":0.98,"support":35500},
-        {"label":"malicious","precision":0.97,"recall":0.98,"f1":0.98,"support":34500}
-      ],
-      "confusion_matrix": [[34350,1150],[690,33810]],
-      "roc_points": [[0,0],[0.02,0.86],[0.05,0.93],[0.1,0.97],[1,1]],
-      "pr_points": [[0.1,0.99],[0.3,0.985],[0.5,0.98],[0.7,0.97],[0.9,0.95]]
-    },
-    {
-      "name": "CNN (binary)",
-      "type": "dl",
-      "variant": "cnn",
-      "artifact": "./models/cnn_binary.pth",
-      "metrics": {
-        "accuracy": 0.9822,
-        "macro_precision": 0.9810,
-        "macro_recall": 0.9817,
-        "macro_f1": 0.9813
-      },
-      "per_class": [
-        {"label":"benign","precision":0.99,"recall":0.98,"f1":0.99,"support":35500},
-        {"label":"malicious","precision":0.98,"recall":0.99,"f1":0.98,"support":34500}
-      ],
-      "confusion_matrix": [[34790,710],[520,33980]],
-      "roc_points": [[0,0],[0.02,0.90],[0.05,0.95],[0.1,0.98],[1,1]],
-      "pr_points": [[0.1,0.995],[0.3,0.99],[0.5,0.985],[0.7,0.98],[0.9,0.96]]
-    }
-  ]
-}</pre>
-        </section>
-      </div>
--->
-
-     
-    </div>
-  </body>
+</body>
 </html>

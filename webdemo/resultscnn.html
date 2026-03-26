@@ -6,77 +6,161 @@
     <title>Results for CNN Model | IDS in IoT using AI Solutions</title>
     <link rel="stylesheet" href="static/styles.css">
 
-    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   </head>
   <body>
     <nav class="nav">
-      <div class="badge"><span class="dot"></span>CSI4999 IDS in IoT</div>
+      <h1 class="fade-in-title">Intrusion Detection in RT-IoT-2022</h1>
       <div>
-        <a class="active" href="./index.html">Overview</a>
-        <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
-        <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
-        <a href="./resultscnn.html">Results CNN</a>
-        <a href="./resultsml.html">Results ML</a>
-        <a href="./resultsdl.html">Results DL</a>
-        <!--<a href="./future-work.html">Future Work</a>-->
-        <!--<a href="./methodology.html">Methodology</a>-->
-        <!--<a href="./challenges.html">Challenges</a>-->
+     <a href="./index.html">Introduction</a>
+    <a href="./team.html">Meet The Team</a>
+    <a href="./projectsummary.html">Project Summary</a>
+    <a href="./projectrequirements.html" >Project Requirements</a>
+    <a href="./technologies.html">Technologies Used</a>
+    <a href="./researchapproach.html">Research Approach</a>
+    <a href="./realworldproblem.html">Real World Problem</a>
+    <a href="./ethicalimpact.html" >Ethical Impact</a>
+    <a href="https://doi.org/10.24432/C5P338" target="_blank" rel="noopener">Dataset</a>
+    <a href="https://github.com/wiIliu/CSI4999_IDSwithAI" target="_blank" rel="noopener">GitHub</a>
+    <a href="./resultscnn.html"class="active">Results CNN</a>
+    <a href="./resultsml.html">Results ML</a>
+    <a href="./resultsdl.html">Results DL</a>
+
+        <h1 class="fade-in-title">Results for CNN Model</h1>
+        
+
       </div>
     </nav>
 
 
-     <div class="grid">
-        <!-- LEFT MODEL -->
-        <section class="card span-6">
-          <div class="badge" id="left-badge"></div>
-          <h2 id="left-title"></h2> 
+<div class="grid fade-in-up" style="--delay: 0.1s;">
+  <section class="card span-6 fade-in-up" style="--delay: 0.2s;">
+    <div class="badge fade-in-up" style="--delay: 0.3s;" id="left-badge"></div>
+    <h2 class="fade-in-up" style="--delay: 0.35s;" id="left-title"></h2> 
         
-           <section class="results-summary">
+    <section class="results-summary fade-in-up" style="--delay: 0.4s;">
       <h2>Performance Summary</h2>
+      <h3>Presented by: Josh Quintano and Austin Tomo</h3>
       <p>
         Our convolutional neural network (CNN) was trained and evaluated on the RT-IoT-2022 dataset.
-        Below is a brief summary of key performance metrics. Detailed numeric results can be
-        presented in a table or bullet list here.
+        Below is a brief summary of key performance metrics. 
       </p>
-      <ul>
-        <li>Accuracy: <strong>XX.XX%</strong></li>
-        <li>Precision: <strong>XX.XX%</strong></li>
-        <li>Recall: <strong>XX.XX%</strong></li>
-        <li>F1-Score: <strong>XX.XX%</strong></li>
-      </ul>
+
     </section>
 
-    <!-- 🖼 Image section for CNN results -->
-    <section id="cnn-image-results" class="results-images">
+    <!--CNN results -->
+     <section id="cnn-image-results" class="results-images fade-in-up" style="--delay: 0.5s;">
       <h2>Result Visualizations</h2>
       <p>
         The following figures show visualizations of the CNN model’s performance, including the
         confusion matrix and additional evaluation plots.
       </p>
 
+      <div class="image-grid fade-in-up" style="--delay: 0.6s;">
+        <figure class="fade-in-up" style="--delay: 0.65s;">
+          <img src="static/images/1d binary CNN.png"
+               alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
+          <figcaption>Figure 1. Classification report and performance metrics for the CNN binary intrusion detection model.
+        The report includes precision, recall, F1-score, and support values for each class, along with overall accuracy and macro-averaged metrics. 
+        The model achieves high performance across all evaluation criteria, indicating strong generalization and reliable detection of both benign and malicious traffic.</figcaption>
+        <ul>
+        <li>Accuracy: <strong>0.9897</strong></li>
+        <li>Macro Precision: <strong>0.9848</strong></li>
+        <li>Macro Recall: <strong>0.9583</strong></li>
+        <li>F1-Score: <strong>0.9710</strong></li>
+        <li>ROC_AUC Score: <strong>0.9957</strong></li>
+      </ul>
+      </figure>
+
+        <figure>
+          <img src="static/images/1d binary CNN 1.png"
+               alt="ROC curve for the CNN model" />
+          <figcaption>Figure 2. Confusion matrix for the CNN binary classification model evaluating IoT network traffic from the RT-IoT-2022 dataset.
+The model demonstrates strong detection capability with high true positive and true negative rates. Misclassifications are minimal, with a small number of benign samples labeled as malicious and vice versa.</figcaption>
+        </figure>
+
+      </div>
+
+            <div class="image-grid">
+        <figure>
+          <img src="static/images/1d binary CNN w self attention.png"
+               alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
+          <figcaption>Figure 3. Classification report and evaluation metrics for the CNN model incorporating a self-attention layer.
+Metrics include precision, recall, and F1-score for each class, along with overall and macro-averaged performance indicators. 
+The model achieves strong results across all categories, reflecting robust generalization and improved precision and recall compared to the baseline CNN model.</figcaption>
+                  <ul>
+        <li>Accuracy: <strong>0.9894</strong></li>
+        <li>Macro Precision: <strong>0.9874</strong></li>
+        <li>Macro Recall: <strong>0.9542</strong></li>
+        <li>F1-Score: <strong>0.9701</strong></li>
+        <li>MCC Score: <strong>0.9410</strong></li>
+      </ul>
+        </figure>
+
+        <figure>
+          <img src="static/images/1d binary CNN w self attention 1.png"
+               alt="ROC curve for the CNN model" />
+          <figcaption>Figure 4. Confusion matrix for the CNN binary classification model enhanced with a self-attention mechanism.
+The model demonstrates highly accurate classification performance, with the majority of samples predicted correctly for both benign and malicious classes. 
+The addition of self-attention further improves discrimination capability by reducing misclassification rates, particularly in malicious traffic detection.</figcaption>
+        </figure>
+
+      </div>
+
+            <div class="image-grid">
+        <figure>
+          <img src="static/images/1d multi-class classifcation CNN.png"
+               alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
+          <figcaption>Figure 5. Classification report for the multi-class CNN intrusion detection model trained on the RT-IoT-2022 dataset.
+The report includes per-class precision, recall, and F1-score metrics across all attack categories as well as normal traffic. 
+The results reveal substantial performance variation across classes, indicating that the model is able to classify some attack types accurately while struggling with others—particularly those with low sample representation.</figcaption>
+                  <ul>
+        <li>Accuracy: <strong>0.0720</strong></li>
+        <li>Macro Precision: <strong>0.3421</strong></li>
+        <li>Macro Recall: <strong>0.0938</strong></li>
+        <li>F1-Score: <strong>0.0262</strong></li>
+        <li>MCC Score: <strong>0.0182</strong></li>
+      </ul>
+        </figure>
+
+        <figure>
+          
+          <img src="static/images/1d multi-class classifcation CNN 1.png"
+               alt="ROC curve for the CNN model" />
+          <figcaption>Figure 6. Confusion matrix for the multi-class CNN model evaluating thirteen attack and benign traffic categories.
+The matrix visualizes prediction patterns across all traffic types, highlighting strong performance on high-volume attack categories (e.g., DOS_Syn_Hping and Thing_Speak), while showing significant misclassification among low-frequency or closely related attack types such as scanning-based threats. 
+This visualization provides insight into model weaknesses related to dataset imbalance and attack similarity.</figcaption>
+        </figure>
+
+      </div>
       <div class="image-grid">
         <figure>
-          <!-- Replace with your actual file path/name -->
-          <img src="images/cnn_confusion_matrix.png"
-               alt="Confusion matrix for the CNN model on the RT-IoT-2022 test data" />
-          <figcaption>Figure 1. Confusion matrix for the CNN model.</figcaption>
+          <img src="static/images/1d multi-class classifcation w self attention.png"
+               alt="Classification report for the CNN model on the RT-IoT-2022 test data" />
+          <figcaption>Figure 7. Classification Report for the 1D CNN Multi-Class Model with Self-Attention.
+This classification report summarizes precision, recall, F1-score, and sample support for each IoT traffic class. 
+The model achieves an overall accuracy of 99%, with a weighted average F1-score of 0.99, demonstrating strong performance on high-frequency 
+classes.</figcaption>
+                  <ul>
+        <li>Accuracy: <strong>0.99</strong></li>
+        <li>Macro Precision: <strong>0.79</strong></li>
+        <li>Macro Recall: <strong>0.86</strong></li>
+        <li>F1-Score: <strong>0.81</strong></li>
+      </ul>
         </figure>
 
         <figure>
-          <!-- Optional: ROC/PR curve or other visualization -->
-          <img src="images/cnn_roc_curve.png"
-               alt="ROC curve for the CNN model" />
-          <figcaption>Figure 2. ROC curve for the CNN model.</figcaption>
-        </figure>
+          <img src="static/images/1d multi-class classifcation w self attention 1.png"
+               alt="Confusion matrix for the CNN model" />
+          <figcaption>Figure 8. Confusion Matrix for the 1D CNN Multi-Class Model with Self-Attention.
+This confusion matrix visualizes model predictions across 13 IoT traffic categories, including both benign activity and multiple attack types. 
+The strong diagonal alignment indicates high classification accuracy, with minimal misclassification between classes.</figure>
 
-        <!-- Add or remove figures as needed -->
-      </div>
     </section>
   </main>
     
 
-      <footer>© CSI4999 • Oakland University — Results</footer>
+      <footer>CSI4999 • Oakland University — Results</footer>
     </div>
 
 
