@@ -1,13 +1,13 @@
 import torch
-
+import numpy as np
 from pytorch_nndct.apis import torch_quantizer
-from edge.multitestLoader import test_loader, class_names
-from MultiCNN_classFile import MultiClass2dCNN
+from multiTestLoader import class_names
+from MultiCNN_classFile import MultiClass1dCNN
 
 print("start")
 
 def load_model(model_path, device):
-    model = MultiClass2dCNN(num_classes=12)
+    model = MultiClass1dCNN(num_classes=12)
     state_dict = torch.load(model_path, map_location=device)
     model.load_state_dict(state_dict)
     model.to(device)
@@ -23,11 +23,12 @@ input("pause...")
 
 cnn.eval()  # Set the model to evaluation mode
 
-xtestpts, ytestpts = next(iter(test_loader))
-print(xtestpts.shape, len(xtestpts))
-xtestpts_0 = xtestpts[0]
-print(xtestpts_0.shape)
-xtestpts_0 =xtestpts_0.unsqueeze(1)
+xtestpts = np.load("val_inputs.npy")  # shape: (308*64,1,83)
+ytestpts = np.load("val_labels.npy")  # shape: (308*64,)
+xtestpts = torch.from_numpy(xtestpts).float()
+ytestpts = torch.from_numpy(ytestpts).long()
+
+xtestpts_0=xtestpts[0].unsqueeze(1)
 
 with torch.no_grad():
     output = cnn(xtestpts_0)
@@ -54,13 +55,16 @@ calib_pts = []
 
 
 # go through each pt 0 thru 9
-for i in range(10):
+for i in range(500):
    calib_pts.append(xtestpts[i+1])
 
-print("Converting to batch...")
-calib_batch = torch.stack(calib_pts[0:9])
-print("calib batch - ",calib_batch.shape)
 
+print("Converting to batch...")
+calib_batch = torch.stack(calib_pts[0:49])
+print("calib batch - ",calib_batch.shape)
+print("calib[0] - ", calib_batch[0].shape)
+
+input("check calib")
 
 print("Quantizing...")
 quantizer = torch_quantizer("calib", cnn, (calib_batch))
@@ -73,7 +77,7 @@ print("Evaluating quantized model...")
 device = torch.device("cpu")
 quant_model.eval()
 quant_model = quant_model.to(device)
-output = quant_model(xtestpts_0)
+output = quant_model(calib_batch[1].unsqueeze(1))
 
 
 # Get the top 5 predicted classes and their confidence scores
@@ -90,11 +94,13 @@ quantizer.export_quant_config()
 
 
 print("Deploying...")
-# create batch with 1 test image
+# create batch with 1 test point
 test = []
 test.append(xtestpts[0])
+print("test len",len(test), test)
 test_batch = torch.stack(test)
-
+print("test batch: ", test_batch.shape)
+input("check test")
 
 # create quantizer with "test" (i.e. evaluation and export) setting
 quantizer = torch_quantizer("test", cnn, (test_batch))
