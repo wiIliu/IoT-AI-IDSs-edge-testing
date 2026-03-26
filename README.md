@@ -117,7 +117,7 @@ The accompanying thesis was **independently authored** as part of the Oakland Un
 │   ├── multiTestLoader.py                # DataLoader for multi-class calibration/eval
 │   ├── edgeDataPreparer.py               # Prepares .npy data arrays for edge use
 │   ├── inference.py                      # On-device inference script
-│   ├── inference-multi.ipynb             # Multi-class inference notebook
+│   ├── inference.ipynb                   # Multi-class inference notebook
 │   ├── cap_binaryCNN_first.xmodel        # Quantized binary CNN (Vitis AI xmodel)
 │   ├── cap_multiCNN_first.xmodel         # Quantized multi-class CNN (Vitis AI xmodel)
 │   └── cnn_compile.sh                    # Vitis AI compile script
@@ -205,7 +205,7 @@ Trained model files are saved to `models/` (`.pth` for PyTorch, `.pkl` for sciki
 
 Classification reports and confusion matrices are automatically saved to `classification_reports/` and `confusionmatrices/` when running each training notebook. For latency benchmarking across hardware, see `latencyTiming.ipynb`.
 
-For edge inference, see `edge/inference.py` and `edge/inference-multi.ipynb`.
+For edge inference, see `edge/inference.py` or `edge/inference.ipynb`.
 
 ---
 
